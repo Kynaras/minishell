@@ -2,6 +2,7 @@
 #include "libft/libft.h"
 int main()
 {
+
     char input[BUFF_SIZE];
     while(read(0, input, BUFF_SIZE))//read waits until you press enter and then it adds that newline to input
     {

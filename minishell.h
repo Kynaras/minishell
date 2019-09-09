@@ -14,4 +14,9 @@ typedef struct s_e_list
     struct s_e_list *next;
 }              t_e_list;
 
+t_e_list    *ft_splitenv(char **environ);
+void		ft_t_add(t_e_list *lst, t_e_list *new);
+t_e_list	*ft_t_new(char *str, int len);
+void    ft_env(t_e_list *lst);
+
 #endif

@@ -7,7 +7,7 @@ t_e_list    *ft_splitenv(char **environ)
     int j;
 
     i = 0;
-    while (environ[i++])
+    while (environ[i])
     {
         j = 0;
         while (environ[i][j] != '=')
@@ -15,9 +15,10 @@ t_e_list    *ft_splitenv(char **environ)
             j++;
         }
         if (lst)
-            ft_t_add(lst, ft_t_new(ft_strsub(environ[i], 0, j), j));
+            ft_t_add(lst, ft_t_new(environ[i], j));
         else
-            lst = ft_t_new(ft_strsub(environ[i], 0, j), j);
+            lst = ft_t_new(environ[i], j);
+		i++;
     }
     return (lst);
 }
