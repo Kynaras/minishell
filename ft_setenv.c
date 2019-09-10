@@ -1,8 +1,8 @@
 #include "minishell.h"
 
-void    ft_setenv(t_e_list **original, char *name, char *value, int write)
+void    ft_setenv(t_e_list *original, char *name, char *value, int write)
 {
-    t_e_list *lst = *original;
+    t_e_list *lst = original;
 
     if (!lst)
         return ;

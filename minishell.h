@@ -21,5 +21,6 @@ t_e_list	*ft_t_new(char *str, int len);
 int 		ft_env(t_e_list *lst);
 t_e_list 	*ft_t_vnew(char *name, char *value);
 void		ft_elstdel(t_e_list *lst);
+void        ft_setenv(t_e_list *original, char *name, char *value, int write)
 
 #endif
