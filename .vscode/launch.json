@@ -8,11 +8,7 @@
 			"name": "gcc build and debug active file",
 			"type": "cppdbg",
 			"request": "launch",
-<<<<<<< Updated upstream
 			"program": "/goinfre/zhelm/Desktop/minishell/a.out",
-=======
-			"program": "/goinfre/keverett/Desktop/minishell/a.out",
->>>>>>> Stashed changes
 			"args": [],
 			"stopAtEntry": false,
 			"cwd": "${workspaceFolder}",
