@@ -1,13 +1,13 @@
 #include "minishell.h"
 
-int main(int argc, char **argv)
+int ft_echo(char **input)
 {
 	int i;
 
 	i = 1;
-	while (i < argc)
+	while (input[i])
 	{
-		ft_putstr(argv[i]);
+		ft_putstr(input[i]);
 		ft_putchar(' ');
 		i++;
 	}
