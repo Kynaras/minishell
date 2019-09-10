@@ -10,7 +10,15 @@ int	ft_errorfind(char *path)
 
 	path2 = ft_strdup(path);
 	lstat(path, &sb);
-	
+
+	if (S_ISREG(sb.st_mode))
+	{
+		ft_putstr("cd: not a directory: ");
+		ft_putstr(path);
+		ft_putchar('\n');
+		free(path2);
+		return (-1);
+	}
 	if (access(path, F_OK) < 0)
 	{
 		slashes = 1;
@@ -26,15 +34,23 @@ int	ft_errorfind(char *path)
 			free(tmp);
 			slashes++;
 		}
-		if (count != -5)
+		if (count != -5 && path2[0] != '/')
 		{
-			ft_putstr("PATH DOES NOT EXIST");
+			ft_putstr("cd: no such file or directory: ");
+			ft_putstr(path);
+			ft_putchar('\n');
+			free(path2);
+			sleep(30);
 			return (-1);
 		}
 	}
-	if (access(path2, R_OK) < 0)
+	if (access(path2, X_OK) < 0)
 	{
-		ft_putstr("ACCESS DENIED");
+		ft_putstr("Permission denied: ");
+		ft_putstr(path);
+		ft_putchar('\n');
+		free(path2);
+		sleep (30);
 		return (-1);
 	}
 	return (0);

@@ -20,7 +20,6 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	i = 0;
 	if (s == NULL)
 		return (NULL);
-	ft_putstr("ok here it is  == ");
 	n = (char*)malloc(len * sizeof(char) + 1);
 	if (n == NULL)
 		return (NULL);
