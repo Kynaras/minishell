@@ -1,6 +1,6 @@
 #include "minishell.h"
 
-void    ft_env(t_e_list *lst)
+int    ft_env(t_e_list *lst)
 {
     while (lst)
     {
@@ -9,5 +9,6 @@ void    ft_env(t_e_list *lst)
         ft_putstr(lst->value);
         ft_putchar('\n');
         lst = lst->next;
-    }
+	}
+	return 0;
 }

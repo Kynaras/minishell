@@ -7,6 +7,7 @@ t_e_list    *ft_splitenv(char **environ)
     int j;
 
     i = 0;
+	lst = NULL;
     while (environ[i])
     {
         j = 0;
@@ -15,7 +16,7 @@ t_e_list    *ft_splitenv(char **environ)
             j++;
         }
         if (lst)
-            ft_t_add(lst, ft_t_new(environ[i], j));
+            ft_t_add(&lst, ft_t_new(environ[i], j));
         else
             lst = ft_t_new(environ[i], j);
 		i++;
