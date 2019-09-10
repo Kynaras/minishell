@@ -1,6 +1,6 @@
 #include "minishell.h"
 
-void 	main(t_e_list *lst)
+void 	ft_elstdel(t_e_list *lst)
 {
 	while (lst)
 	{

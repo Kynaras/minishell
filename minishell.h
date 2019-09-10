@@ -15,8 +15,9 @@ typedef struct s_e_list
 }              t_e_list;
 
 t_e_list    *ft_splitenv(char **environ);
-void		ft_t_add(t_e_list **lst, t_e_list *new);
+void		ft_t_add(t_e_list *lst, t_e_list *new);
 t_e_list	*ft_t_new(char *str, int len);
 int 		ft_env(t_e_list *lst);
+t_e_list 	*ft_t_vnew(char *name, char *value);
 
 #endif
