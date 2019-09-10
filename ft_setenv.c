@@ -23,5 +23,5 @@ void    ft_setenv(t_e_list *original, char *name, char *value, int write)
         return;
     }
     else if (!lst)
-        ft_t_add(*original, ft_t_vnew(name, value));   
+        ft_t_add(original, ft_t_vnew(name, value));   
 }
