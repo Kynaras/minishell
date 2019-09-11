@@ -1,5 +1,7 @@
 {
 	"files.associations": {
-		"minishell.h": "c"
+		"*.txt": "bat",
+		"minishell.h": "c",
+		"libft.h": "c"
 	}
 }
