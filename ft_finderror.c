@@ -11,6 +11,7 @@ int	ft_errorfind(char *path)
 	path2 = ft_strdup(path);
 	lstat(path, &sb);
 
+	
 	if (S_ISREG(sb.st_mode))
 	{
 		ft_putstr("cd: not a directory: ");
