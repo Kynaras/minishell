@@ -5,7 +5,7 @@ void 	ft_arg_split(t_args **input)
 {
 }
 
-int ft_read_args(char **input, int count)
+int ft_read_args(t_args **input, int count)
 {
 	char tmp[PATH_MAX];//read into one copy and paste into other one then strjoin to nput;
 	char tmp1[PATH_MAX];
@@ -23,7 +23,7 @@ int ft_read_args(char **input, int count)
 		i++;
 	}
 	tmp1[i] = '\0';
-	ft_join(input, tmp1);
+	ft_join((*input)->argument, tmp1);
 	if (count == 1)
 	{
 		write(1, "dquote> ", 8);
