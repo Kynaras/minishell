@@ -29,7 +29,5 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 		i++;
 	}
 	n[i] = '\0';
-	ft_putstr(n);
-	ft_putchar('\n');
 	return (n);
 }

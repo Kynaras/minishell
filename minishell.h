@@ -10,6 +10,19 @@
 
 # define BUFF_SIZE 2048
 
+
+typedef struct	s_args
+{
+	char			*argument;
+	struct s_args	*next;
+}				t_args;
+
+typedef struct s_args_2d
+{
+	struct  s_args *args;
+	struct s_args_2d *next;
+}				t_args_2d;
+
 typedef struct s_e_list
 {
     char *name;

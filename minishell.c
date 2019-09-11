@@ -21,12 +21,13 @@ size_t ft_count_args(char *input)
 			d = 1;
 		i++;
 	}
+	ft_putnbr((int)strings);
 	return (strings);
 }
 
 
 
-void ft_arg_split(char *input)
+char **ft_arg_split(char *input)//logic is bad here
 {
 	int i;
 	int j;
@@ -36,7 +37,8 @@ void ft_arg_split(char *input)
 	j = 0;
 	i = 0;
 	n = 0;
-	input_split = (char**)malloc(sizeof(char *) * (ft_count_args(input) + 1));
+	input_split = NULL;
+	input_split = (char**)malloc(sizeof(char *) * (ft_count_args(input) + 2));
 	while (input[i])
 	{
 		if (ft_iswhitespace(input[i]) != 1 && input[i] != '"' && input[i] != '\n')
@@ -61,25 +63,31 @@ void ft_arg_split(char *input)
 		else
 			i++;
 	}
+	input_split[n] = NULL;
+	return input_split;
 }
 
-int ft_read_args(char *input, int count)
+int ft_read_args(char **input, int count)
 {
-	char tmp[PATH_MAX];
+	char tmp[PATH_MAX];//read into one copy and paste into other one then strjoin to nput;
+	char tmp1[PATH_MAX];
 	int i;
 
 	i = 0;
+	ft_memset(tmp, 0, PATH_MAX);
+	ft_memset(tmp1, 0, PATH_MAX);
 	read(0, tmp, PATH_MAX);
-	while(tmp[i])
+	while(tmp[i] && tmp[i] != '\n')
 	{
+		tmp1[i] = tmp[i];
 		if(tmp[i] == '"')
 			count = (count == 0) ? 1 : 0;
 		i++;
 	}
+	tmp1[i] = '\0';
+	ft_join(input, tmp1);
 	if (count == 1)
 	{
-		input = ft_strjoin(input, tmp);
-		ft_putendl(input);
 		write(1, "dquote> ", 8);
 		ft_read_args(input, count);
 	}
@@ -89,25 +97,37 @@ int ft_read_args(char *input, int count)
 int main() //make sure there is only one command
 {
 	extern char **environ;
-	char input[PATH_MAX];
+	char *input;
+	char **input_split;
 	t_e_list *env;
+	int i;
 
+	i = 0;
+	input = NULL;
 	env = ft_splitenv(environ);
-	while (write(1, "$> ", 3) && ft_read_args(input, 0))
+	while (write(1, "$> ", 3) && ft_read_args(&input, 0))
 	{
 		ft_putstr(input);
+			input_split = ft_arg_split(input);
 		if (ft_strcmp(input, "exit\n") == 0)
 		{
 			ft_elstdel(env);
 			return (0);
 		}
-		ft_arg_split(input);
 		if (ft_strcmp("env\n", input) == 0)
 			ft_env(env);
 		if (ft_strstr(input, "echo") != NULL)
-			ft_arg_split(input);
-		//if(ft_strstr())
-		//	ft_setenv(&env, envar, enval);//all chars
-		ft_memset(input, 0, ft_strlen(input));
+		{
+			i = 0;
+			while(input_split[i])
+			{
+				ft_putstr(input_split[i]);
+				ft_putchar('\n');
+				i++;
+			}
+		}
+		// if(ft_strstr())
+		// 	ft_setenv(&env, envar, enval);//all chars
+		ft_strdel(&input);
 	}
 }
