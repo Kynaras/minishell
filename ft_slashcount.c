@@ -11,10 +11,12 @@ int 	ft_slashcount(char *path, int ignore)
 	i--;
 	while(i >= 0 && ignore > 0)
 	{
-		ignore--;
 		if (path[i] == '/')
 			ignore--;
 		i--;
 	}
-	return (i);
+	if (i == -1) 
+		return (0);
+	else
+		return (i);
 }
