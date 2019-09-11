@@ -1,6 +1,6 @@
 #include "minishell.h"
 
-void ft_echo(char **input)
+void ft_echo( *input)
 {
 	int i;
 

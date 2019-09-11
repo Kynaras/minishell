@@ -1,8 +1,7 @@
 #include "minishell.h"
 
-int main(int argc, char **destination)
+int main(int argc, char **destination, t_e_list *lst)
 {
-	char buf[PATH_MAX];
 	if (!destination)
 		return (0);
 	/* If chdir returns less than 0, we call errorfind to identify what type of error it is */
@@ -10,4 +9,8 @@ int main(int argc, char **destination)
 	{
 		ft_errorfind(destination[1]);
 	}
+	/*Else we change the appropriate environment variables*/
+
+	ft_setenv(lst, "OLDPWD", ft_getenv("PWD", lst), 1);
+	ft_setenv(lst, "PWD", destination, 1);
 }
