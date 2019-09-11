@@ -10,7 +10,6 @@
 
 # define BUFF_SIZE 2048
 
-
 typedef struct	s_args
 {
 	char			*argument;

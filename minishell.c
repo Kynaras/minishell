@@ -1,70 +1,8 @@
 #include "minishell.h"
 #include "libft/libft.h"
 
-size_t ft_count_args(char *input)
+void 	ft_arg_split(t_args **input)
 {
-	size_t i;
-	size_t d;
-	size_t strings;
-
-	i = 0;
-	d = 1;
-	strings = 0;
-	while (input[i] != '\0')
-	{
-		if (input[i] != '"' && d == 1)
-		{
-			d = 0;
-			strings++;
-		}
-		if (input[i] == '"' && d == 0)
-			d = 1;
-		i++;
-	}
-	ft_putnbr((int)strings);
-	return (strings);
-}
-
-
-
-char **ft_arg_split(char *input)//logic is bad here
-{
-	int i;
-	int j;
-	int n;
-	char **input_split;
-
-	j = 0;
-	i = 0;
-	n = 0;
-	input_split = NULL;
-	input_split = (char**)malloc(sizeof(char *) * (ft_count_args(input) + 2));
-	while (input[i])
-	{
-		if (ft_iswhitespace(input[i]) != 1 && input[i] != '"' && input[i] != '\n')
-		{
-			j = 0;
-			while (input[i + j] && ft_iswhitespace(input[i + j]) != 1)
-				j++;
-			input_split[n] = ft_strsub(input, i, j);
-			i = i + j + 1;
-			n++;
-		}
-		else if (input[i] == '"')
-		{
-			j = 0;
-			i++;
-			while (input[i + j] && input[i + j] != '"')
-				j++;
-			input_split[n] = ft_strsub(input, i, j);
-			n++;
-			i = i + j + 1;
-		}
-		else
-			i++;
-	}
-	input_split[n] = NULL;
-	return input_split;
 }
 
 int ft_read_args(char **input, int count)
@@ -94,11 +32,10 @@ int ft_read_args(char **input, int count)
 	return 1;
 }
 
-int main() //make sure there is only one command
+int main()
 {
 	extern char **environ;
-	char *input;
-	char **input_split;
+	t_args *input;
 	t_e_list *env;
 	int i;
 
@@ -107,8 +44,8 @@ int main() //make sure there is only one command
 	env = ft_splitenv(environ);
 	while (write(1, "$> ", 3) && ft_read_args(&input, 0))
 	{
-		ft_putstr(input);
-			input_split = ft_arg_split(input);
+		ft_putstr(input->argument);
+		ft_arg_split(&input);
 		if (ft_strcmp(input, "exit\n") == 0)
 		{
 			ft_elstdel(env);
@@ -119,11 +56,11 @@ int main() //make sure there is only one command
 		if (ft_strstr(input, "echo") != NULL)
 		{
 			i = 0;
-			while(input_split[i])
+			while(input)
 			{
-				ft_putstr(input_split[i]);
+				ft_putstr(input->argument);
 				ft_putchar('\n');
-				i++;
+				input = input->next;
 			}
 		}
 		// if(ft_strstr())
