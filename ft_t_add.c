@@ -1,8 +1,8 @@
 #include "minishell.h"
 
-void    ft_t_add(t_e_list *lst, t_e_list *new)
+void    ft_t_add(t_env_list *lst, t_env_list *new)
 {
-	t_e_list *tmp;
+	t_env_list *tmp;
 	
 	tmp = lst;
 	if (lst)

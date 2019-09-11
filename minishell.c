@@ -99,7 +99,7 @@ int main() //make sure there is only one command
 	extern char **environ;
 	char *input;
 	char **input_split;
-	t_e_list *env;
+	t_env_list *env;
 	int i;
 
 	i = 0;

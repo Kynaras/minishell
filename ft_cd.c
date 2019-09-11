@@ -1,6 +1,6 @@
 #include "minishell.h"
 
-int main(int argc, char **destination, t_e_list *lst)
+int main(int argc, char **destination)
 {
 	if (!destination)
 		return (0);
@@ -11,6 +11,6 @@ int main(int argc, char **destination, t_e_list *lst)
 	}
 	/*Else we change the appropriate environment variables*/
 
-	ft_setenv(lst, "OLDPWD", ft_getenv("PWD", lst), 1);
-	ft_setenv(lst, "PWD", destination, 1);
+	// ft_setenv(lst, "OLDPWD", ft_getenv("PWD", lst), 1);
+	// ft_setenv(lst, "PWD", destination, 1);
 }

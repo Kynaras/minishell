@@ -1,8 +1,8 @@
 #include "minishell.h"
 
-void    ft_unsetenv(t_e_list *lst, const char *name)
+void    ft_unsetenv(t_env_list *lst, const char *name)
 {
-    t_e_list *tmp;
+    t_env_list *tmp;
 
     tmp = NULL;
     while (lst)

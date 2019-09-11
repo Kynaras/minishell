@@ -1,8 +1,8 @@
 #include "minishell.h"
 
-t_e_list    *ft_splitenv(char **environ)
+t_env_list    *ft_splitenv(char **environ)
 {
-    t_e_list *lst;
+    t_env_list *lst;
     int i;
     int j;
 

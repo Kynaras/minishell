@@ -28,15 +28,15 @@ typedef struct s_e_list
     char *name;
     char *value;
     struct s_e_list *next;
-}              t_e_list;
+}              t_env_list;
 
-t_e_list    *ft_splitenv(char **environ);
-void		ft_t_add(t_e_list *lst, t_e_list *new);
-t_e_list	*ft_t_new(char *str, int len);
-int 		ft_env(t_e_list *lst);
-t_e_list 	*ft_t_vnew(char *name, char *value);
-void		ft_elstdel(t_e_list *lst);
-void        ft_setenv(t_e_list *original, char *name, char *value, int write);
+t_env_list    *ft_splitenv(char **environ);
+void		ft_t_add(t_env_list *lst, t_env_list *new);
+t_env_list	*ft_t_new(char *str, int len);
+int 		ft_env(t_env_list *lst);
+t_env_list 	*ft_t_vnew(char *name, char *value);
+void		ft_elstdel(t_env_list *lst);
+void        ft_setenv(t_env_list *original, char *name, char *value, int write);
 int			ft_errorfind(char *path);
 int			ft_slashcount(char *path, int ignore);
 
