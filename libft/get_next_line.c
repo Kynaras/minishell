@@ -20,8 +20,7 @@ void	ft_lstad(t_list **list, char *buf, int fd)
 	tmp = *list;
 	while (tmp != NULL)
 	{
-		if (tmp->content_size == (unsigned)fd && ft_strchr(buf,
-					'\0' != ft_strchr(buf, '\n') + 1))
+		if (tmp->content_size == (unsigned)fd && ft_strchr(buf, ft_strchr(buf, '\n') + 1) != '\0')
 		{
 			ft_bzero(tmp->content, BUFF_SIZE);
 			ft_strcpy(tmp->content, ft_strchr(buf, '\n') + 1);
