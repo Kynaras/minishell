@@ -81,6 +81,7 @@ SRC = ft_atoi.c \
 		ft_strclen.c \
 		ft_strcdup.c \
 		ft_chrlen.c \
+		get_next_line.c \
 
 OBJECTS = $(SRC:.c=.o)
 

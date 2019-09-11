@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
-#include "libft/libft.h"
+#include "libft.h"
+#include "../minishell.h"
 
 void	ft_lstad(t_list **list, char *buf, int fd)
 {
