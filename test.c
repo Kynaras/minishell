@@ -1,8 +1,11 @@
 #include "minishell.h"
+#include <readline/readline.h>
+#include <stdlib.h>
+#include <stdio.h>
 
-int main()
+int main(int argc, char **argv)
 {
-	extern char **environ;
-	t_env_list *lst = ft_splitenv(environ);
-	ft_env(lst);
+	char *str = readline("Enter here$>");
+	printf("You entered %s", str);
+	return (0);
 }
