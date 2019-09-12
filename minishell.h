@@ -21,7 +21,7 @@ typedef struct	s_args
 
 typedef struct s_args_2d
 {
-	struct  s_args *args;
+	struct  s_args *node;
 	struct s_args_2d *next;
 }				t_args_2d;
 
@@ -43,5 +43,9 @@ int			ft_errorfind(char *path);
 int			ft_slashcount(char *path, int ignore);
 void		ft_t_args_add(t_args **lst, t_args *new);
 t_args		*ft_t_args_new(char *str);
+t_args_2d	*ft_t_args_2d_new(t_args *lst);
+void		ft_t_args_2d_add(t_args_2d **lst, t_args_2d *new);
+size_t		ft_arr_len(char **arr);
+void		ft_echo(t_args *input);
 
 #endif
