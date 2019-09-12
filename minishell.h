@@ -1,7 +1,10 @@
 #ifndef MINISHELL_H
 
 # define MINISHELL_H
-
+#	include "minishell.h"
+#	include <stdio.h>
+#	include <readline/readline.h>
+#	include <readline/history.h>
 #	include "libft/libft.h"
 #	include <unistd.h>
 #	include <stdlib.h>
@@ -18,7 +21,7 @@ typedef struct	s_args
 
 typedef struct s_args_2d
 {
-	struct  s_args *args;
+	struct  s_args *node;
 	struct s_args_2d *next;
 }				t_args_2d;
 
@@ -29,7 +32,7 @@ typedef struct s_e_list
     struct s_e_list *next;
 }              t_env_list;
 
-t_env_list    *ft_splitenv(char **environ);
+t_env_list	*ft_splitenv(char **environ);
 void		ft_t_add(t_env_list *lst, t_env_list *new);
 t_env_list	*ft_t_new(char *str, int len);
 int 		ft_env(t_env_list *lst);
@@ -38,5 +41,11 @@ void		ft_elstdel(t_env_list *lst);
 void        ft_setenv(t_env_list *original, char *name, char *value, int write);
 int			ft_errorfind(char *path);
 int			ft_slashcount(char *path, int ignore);
+void		ft_t_args_add(t_args **lst, t_args *new);
+t_args		*ft_t_args_new(char *str);
+t_args_2d	*ft_t_args_2d_new(t_args *lst);
+void		ft_t_args_2d_add(t_args_2d **lst, t_args_2d *new);
+size_t		ft_arr_len(char **arr);
+void		ft_echo(t_args *input);
 
 #endif

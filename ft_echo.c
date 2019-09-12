@@ -2,6 +2,7 @@
 
 void ft_echo(t_args *input)
 {
+	input = input->next->next;
 	while (input)
 	{
 		ft_putstr(input->argument);
