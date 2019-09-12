@@ -37,6 +37,8 @@ char	*ft_namecheck(char *path)
 }
 int	ft_errorfind(char *path)
 {
+	if (!path)
+		return (0);
 	char *path2;
 	char *tmp;
 	struct stat sb;
@@ -82,10 +84,20 @@ int	ft_errorfind(char *path)
 		}
 		if (count != -5 && path2[0] != '/')
 		{
+			if (lstat(path, &sb) == 0 && stat(path, &sb) == -1)
+			{
+				ft_putstr("cd: too many levels of symbolic links: ");
+				ft_putendl(path);
+				free(path2);
+				return (-1);
+			}
+			else
+			{
 			ft_putstr("cd: no such file or directory: ");
 			ft_putendl(path);
 			free(path2);
 			return (-1);
+			}
 		}
 	}
 	if (access(path2, X_OK) < 0)
