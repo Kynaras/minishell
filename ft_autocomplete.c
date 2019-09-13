@@ -4,6 +4,7 @@
 #include <readline/readline.h>
 #include "minishell.h"
 #include <dirent.h>
+#include <fcntl.h>
 
 char **character_name_completion(const char *, int, int);
 char *character_name_generator(const char *, int);
@@ -15,6 +16,42 @@ char *character_names[] = {
     "Zaphod Beeblebrox",
     NULL
 };
+
+char **ft_megarray(char **array)
+{
+	DIR *dr;
+	struct dirent *dir;
+	char **megarray;
+	int i = -1;
+	int str = 0;
+	while (array[++i])
+	{
+		if ((dr = opendir(array[i])))
+		{
+			while((dir = readdir(dr)))
+			{
+				str++;
+			}
+		}
+		closedir(dr);
+	}
+	megarray = ft_memalloc(sizeof (char *) * str + 2);
+	i = -1;
+	str = 0;
+	while (array[++i])
+	{
+		if ((dr = opendir(array[i])))
+		{
+			while((dir = readdir(dr)))
+			{
+				megarray[str] = ft_strdup(dir->d_name);
+				str++;
+			}
+			closedir(dr);
+		}
+	}
+	return (megarray);
+}
 
 char **ft_pathget(t_env_list *env)
 {
@@ -32,70 +69,56 @@ char **ft_pathget(t_env_list *env)
 int
 main(int argc, char *argv[])
 {
+	char *buffer;
+
     rl_attempted_completion_function = character_name_completion;
 
-    printf("Who's your favourite Hitchiker's Guide character?\n");
-    char *buffer = readline("> ");
+    printf("Test autocompleter has started\n");
+	while((buffer = readline("> ")) != NULL)
+	{
     if (buffer) {
         printf("You entered: %s\n", buffer);
-        free(buffer);
     }
-
+	}
     return 0;
 }
 
 char **
 character_name_completion(const char *text, int start, int end)
 {
+	//ft_putendl("Came into char name complete");
     rl_attempted_completion_over = 1;
-    return rl_completion_matches(text, character_name_generator);
+	rl_completion_append_character = '\0';
+	if (start == 0)
+		return rl_completion_matches(text, character_name_generator);
+	else return (NULL);
 }
 
 char *
 character_name_generator(const char *text, int state)
 {
-	DIR *dr;
-	struct dirent *dir;
 	extern char **environ;
 	t_env_list *env = ft_splitenv(environ);
 	static int list_index, len;
     char *name;
 	static int i;
+	static char **array;
+	open("file.txt", O_RDWR);
+
+	
 
     if (!state) {
-        list_index = 0;
+        i = -1;
         len = strlen(text);
+		array = ft_megarray(ft_pathget(env));
     }
-
-	char **array = ft_pathget(env);
-	//ft_putstr(array[i]);
-	while (array[i++])
+	while (array[++i])
 	{
-		// return (NULL);
-		// ft_putstr(array[i]);
-		if ((dr = opendir(array[i])))
-		{
-			while((dir = readdir(dr)))
-			{
-				if (strncmp(dir->d_name, text, len) == 0)
+				if (ft_strncmp(array[i], text, len) == 0)
 				{
-					name = ft_strdup(dir->d_name);
-					closedir(dr);
+					name = ft_strdup(array[i]);
 					return (name);
 				}
-			}
-		}
-
 	}
 	return (NULL);
 }
-    // while ((name = array[list_index++])) 
-	// {
-    //     if (strncmp(name, text, len) == 0) 
-	// 	{
-    //         return strdup(name);
-    //     }
-    // }
-
-//     return NULL;
-// }
