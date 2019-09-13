@@ -3,6 +3,7 @@
 char	**ft_lstarray(t_env_list *lst)
 {
 	char **array;
+	char *temp;
 	t_env_list *tmp;
 	size_t len;
 
@@ -17,10 +18,12 @@ char	**ft_lstarray(t_env_list *lst)
 	while (lst)
 	{
 		array[len] = NULL;
-		ft_join(&array[len], lst->name);
-		ft_join(&array[len], "=");
-		ft_join(&array[len], lst->value);
+		ft_join(&(array[len]), lst->name);
+		ft_join(&(array[len]), "=");
+		ft_join(&(array[len]), lst->value);
 		len++;
+		lst = lst->next;
 	}
 	array[len] = NULL;
+	return(array);
 }

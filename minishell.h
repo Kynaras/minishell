@@ -47,5 +47,6 @@ t_args_2d	*ft_t_args_2d_new(t_args *lst);
 void		ft_t_args_2d_add(t_args_2d **lst, t_args_2d *new);
 size_t		ft_arr_len(char **arr);
 void		ft_echo(t_args *input);
+char		**ft_lstarray(t_env_list *lst);
 
 #endif
