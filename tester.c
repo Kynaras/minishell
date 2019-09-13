@@ -2,11 +2,12 @@
 
 int main()
 {
-	char buf[100];
+	extern char **environ;
+	t_env_list *lst = ft_splitenv(environ);
+	char *path = NULL;
 
-	while (1)
+	if ((path = ft_findpath("ls", lst)))
 	{
-		read(1, buf, 20);
-		ft_putstr(buf);
+		ft_putendl(path);
 	}
 }
