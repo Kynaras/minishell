@@ -2,10 +2,14 @@
 
 void ft_intro()
 {	ft_putendl("																										");
-	ft_putendl("	* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  *");
-	ft_putendl("	*                                                                                                  *");
-	ft_putendl("	*                                                                                                  *");
-	ft_putendl("	*                                                                                                  *");
+	ft_putstr("	* * * * * * * * * * * * * * * * * * * * * * * * ");
+	ft_putendl("* * * * * * * * * * * * * * * * * * * * * * * * *  *");
+	ft_putstr("	*                                              ");
+	ft_putendl("                                                    *");
+	ft_putstr("	*                                              ");
+	ft_putendl("                                                    *");
+	ft_putstr("	*                                              ");
+	ft_putendl("                                                    *");
 	ft_putstr("	*   ▄▄▄▄███▄▄▄▄    ▄█  ███▄▄▄▄    ▄█     ▄████████    ");
 	ft_putstr("\033[0;31m");
 	ft_putstr("▄█    █▄       ▄████████  ▄█        ▄█");
@@ -46,8 +50,12 @@ void ft_intro()
 	ft_putstr("███    █▀      ██████████ █████▄▄██ █████▄▄██");
 	ft_putstr("\033[0m");
 	ft_putendl(" *");
-	ft_putendl("	*                                                                                                  *");
-	ft_putendl("	*                                                                                                  *");
-	ft_putendl("	*                                                                                                  *");
-	ft_putendl("	* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *  *");
+	ft_putstr("	*                                              ");
+	ft_putendl("                                                    *");
+	ft_putstr("	*                                              ");
+	ft_putendl("                                                    *");
+	ft_putstr("	*                                              ");
+	ft_putendl("                                                    *");
+	ft_putstr("	* * * * * * * * * * * * * * * * * * * * * * * * * ");
+	ft_putendl("* * * * * * * * * * * * * * * * * * * * * * * *  *");
 }
