@@ -18,6 +18,7 @@ SRC =	minishell.c \
 		ft_arr_len.c \
 		ft_t_args_2d_add.c \
 		ft_t_args_2d_new.c \
+		ft_intro.c \
 
 
 FLAGS = -g -Wall -Wextra -Werror

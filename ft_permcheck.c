@@ -12,7 +12,7 @@
 
 #include "minishell.h"
 
-int	ft_subcheck(char *path, char *path2, int count)
+int	ft_subcheck(char *path, char *path2, int count, struct stat *sb)
 {
 	char	*tmp;
 	int		slashes;
@@ -32,7 +32,7 @@ int	ft_subcheck(char *path, char *path2, int count)
 	}
 	if (count != -5 && path2[0] != '/')
 	{
-		if (lstat(path, &sb) == 0 && stat(path, &sb) == -1)
+		if (lstat(path, sb) == 0 && stat(path, &sb) == -1)
 			return (-1);
 		else
 			return (-1);
@@ -57,7 +57,7 @@ int	ft_permfind(char *path)
 		return (-2);
 	if (access(path, F_OK) < 0)
 	{
-		return (ft_subcheck(path, path2, count));
+		return (ft_subcheck(path, path2, count, &sb));
 	}
 	if (access(path2, X_OK) < 0)
 		return (-1);

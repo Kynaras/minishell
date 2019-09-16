@@ -90,6 +90,7 @@ int main() //echo, cd, setenv, unsetenv, env, exit
 
 	input_2d = NULL;
 	env = ft_splitenv(environ);
+	ft_intro();
 	while (input_2d || ft_read_args(&input_2d, 0))
 	{
 		if (input_2d->node)

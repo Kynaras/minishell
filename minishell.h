@@ -50,9 +50,9 @@ void		ft_echo(t_args *input);
 char		**ft_lstarray(t_env_list *lst);
 char		*ft_findpath(char *arg, t_env_list *env);
 char		*ft_getenv(char *var, t_env_list *lst);
-int			ft_errorfind(char *path);
+int			ft_finderror(char *path);
 int			ft_permcheck(char *path);
 void		ft_freearray(char **array);
 char		*ft_namecheck(char *path);
-
+void		ft_intro(void);
 #endif

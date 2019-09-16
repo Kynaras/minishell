@@ -9,14 +9,6 @@
 char **character_name_completion(const char *, int, int);
 char *character_name_generator(const char *, int);
 
-char *character_names[] = {
-    "Arthur Dent",
-    "Ford Prefect",
-    "Tricia McMillan",
-    "Zaphod Beeblebrox",
-    NULL
-};
-
 char **ft_megarray(char **array)
 {
 	DIR *dr;
