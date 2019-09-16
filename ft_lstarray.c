@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstarray.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: keverett <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/09/16 12:49:04 by keverett          #+#    #+#             */
+/*   Updated: 2019/09/16 12:49:44 by keverett         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minishell.h"
 
 char	**ft_lstarray(t_env_list *lst)
 {
-	char **array;
-	char *temp;
-	t_env_list *tmp;
-	size_t len;
+	char		**array;
+	char		*temp;
+	t_env_list	*tmp;
+	size_t		len;
 
 	tmp = lst;
 	while (tmp)
@@ -25,5 +37,5 @@ char	**ft_lstarray(t_env_list *lst)
 		lst = lst->next;
 	}
 	array[len] = NULL;
-	return(array);
+	return (array);
 }
