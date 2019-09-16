@@ -99,8 +99,26 @@ int main() //echo, cd, setenv, unsetenv, env, exit
 			{
 				if (ft_strcmp(arg , "echo") != 0 && ft_strcmp(arg, "exit") != 0 && ft_strcmp(arg, "setenv") != 0 && ft_strcmp(arg, "cd") != 0 && ft_strcmp(arg, "unsetenv") != 0 && ft_strcmp(arg, "env") != 0)
 					{
+						if(lstat() != -1)
+						{
+							if()
+							{
+
+							}
+							else
+							{
+								wait(NULL);
+							}
+						}
+						else if (ft_findpath())
+						{
+							if (lstat() && ft_permcheck() == -1);
+						}
+						else
+						{
 						ft_putstr("minishell: command not found: ");
 						ft_putendl(arg);
+						}
 					}
 			}
 			else if (input_2d->node->argument &&  ft_strcmp(input_2d->node->argument, "exit") == 0) //no other arguments otherwise "error exit: too many arguments" message;
