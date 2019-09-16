@@ -1,16 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_cd.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: keverett <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/09/16 11:11:44 by keverett          #+#    #+#             */
+/*   Updated: 2019/09/16 11:12:13 by keverett         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minishell.h"
 
-int main(int argc, char **destination)
+void	ft_cd(char **destination)
 {
 	if (!destination)
 		return (0);
-	/* If chdir returns less than 0, we call errorfind to identify what type of error it is */
 	if (chdir(destination[1]) < 0)
 	{
 		ft_errorfind(destination[1]);
 	}
-	/*Else we change the appropriate environment variables*/
-
-	// ft_setenv(lst, "OLDPWD", ft_getenv("PWD", lst), 1);
-	// ft_setenv(lst, "PWD", destination, 1);
 }

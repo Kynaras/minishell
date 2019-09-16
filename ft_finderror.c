@@ -1,15 +1,15 @@
 #include "minishell.h"
 
-int	ft_errorfind(char *path)
+int	ft_finderror(char *path)
 {
-	if (!path)
-		return (0);
 	char *path2;
 	char *tmp;
 	struct stat sb;
 	int slashes;
 	int count;
 
+	if (!path)
+		return (0);
 	if(ft_strlen(path) > PATH_MAX)
 	{
 		ft_putstr("cd : Path length too long: ");
