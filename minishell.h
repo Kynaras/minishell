@@ -55,4 +55,5 @@ int			ft_permcheck(char *path);
 void		ft_freearray(char **array);
 char		*ft_namecheck(char *path);
 void		ft_intro(void);
+void		ft_time(void);
 #endif
