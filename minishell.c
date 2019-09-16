@@ -6,8 +6,10 @@ void ft_arg_split(t_args_2d **input, char *tmp)
 	int i;
 	int j;
 
+	if (*input == NULL && ft_strlen(tmp) != 0)
+		*input = ft_t_args_2d_new(NULL);
 	i = 0;
-	while (tmp[i])
+	while (ft_strlen(tmp) != 0 && tmp[i])
 	{
 		j = 0;
 		if (ft_iswhitespace(tmp[i]) != 1 && tmp[i] != '"')
@@ -58,11 +60,13 @@ int ft_read_args(t_args_2d **input_2d, int count)
 	char *tmp;
 	int i;
 
-	if (*input_2d == NULL)
-		*input_2d = ft_t_args_2d_new(NULL);
+	// if (*input_2d == NULL)
+	// 	*input_2d = ft_t_args_2d_new(NULL);
 	i = 0;
 	tmp = readline("$> ");
 	add_history(tmp);
+	if(tmp)
+	{
 	while (tmp[i])
 	{
 		if (tmp[i] == '"')
@@ -72,44 +76,47 @@ int ft_read_args(t_args_2d **input_2d, int count)
 	if (count == 1)
 		tmp = ft_read_dquote(tmp, count);
 	ft_arg_split(input_2d, tmp);
+	}
 	return 1;
 }
 
 int main() //echo, cd, setenv, unsetenv, env, exit
-
+//a putstr is segfdaulting somewhere
 {
+	char *arg;
 	extern char **environ;
-	t_args *input;
 	t_args_2d *input_2d;
 	t_env_list *env;
 
 	input_2d = NULL;
-	input = ft_t_args_new(NULL);
 	env = ft_splitenv(environ);
 	while (input_2d || ft_read_args(&input_2d, 0))
 	{
-		if (input_2d)
+		if (input_2d->node)
 		{
-			// while(tmp)
-			// {
-			// 	ft_putstr(tmp->argument);
-			// 	ft_putstr("\n");
-			// 	tmp = tmp->next;
-			// }
-			if (ft_strstr(input_2d->node->argument, "exit") != NULL) //no other arguments otherwise "error exit: too many arguments" message;
+			arg = input_2d->node->argument;
+			if(arg)//going to activate each time
+			{
+				if (ft_strcmp(arg , "echo") != 0 && ft_strcmp(arg, "exit") != 0 && ft_strcmp(arg, "setenv") != 0 && ft_strcmp(arg, "cd") != 0 && ft_strcmp(arg, "unsetenv") != 0 && ft_strcmp(arg, "env") != 0)
+					{
+						ft_putstr("minishell: command not found: ");
+						ft_putendl(arg);
+					}
+			}
+			else if (input_2d->node->argument &&  ft_strcmp(input_2d->node->argument, "exit") == 0) //no other arguments otherwise "error exit: too many arguments" message;
 			{
 				ft_elstdel(env);
 				return (0);
 			}
-			// if (ft_strstr("env", input->argument) != NULL)
-			// 	ft_env(env);
-			if (ft_strstr(input_2d->node->argument, "echo") != NULL)
+			if (ft_strcmp("env", input_2d->node->argument) == 0)
+				ft_env(env);
+			if (ft_strcmp(input_2d->node->argument, "echo") == 0)
 				ft_echo(input_2d->node);
-			// if(ft_strstr())
+			// // if(ft_strstr())
 			// 	ft_setenv(&env, envar, enval);//all chars
-			ft_strdel(&(input->argument));
-			// ft_putstr("ok");
-			input_2d = input_2d->next;
+			input_2d->node = input_2d->node->next;
 		}
+		else
+			input_2d = input_2d->next;
 	}
 }
