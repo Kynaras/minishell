@@ -19,6 +19,7 @@ SRC =	minishell.c \
 		ft_t_args_2d_add.c \
 		ft_t_args_2d_new.c \
 		ft_intro.c \
+		ft_time.c \
 
 
 FLAGS = -g -Wall -Wextra -Werror
