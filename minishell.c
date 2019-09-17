@@ -81,7 +81,6 @@ int ft_read_args(t_args_2d **input_2d, int count)
 }
 
 int main() //echo, cd, setenv, unsetenv, env, exit
-//a putstr is segfdaulting somewhere
 {
 	char *arg;
 	extern char **environ;
@@ -127,6 +126,13 @@ int main() //echo, cd, setenv, unsetenv, env, exit
 					ft_setenv(&env, input_2d->node->next->argument, input_2d->node->next->next->argument, 1);//all chars
 				else if (ft_strcmp("unsetenv", arg) == 0)
 					ft_unsetenv(env, input_2d->node->next->argument);
+				else if (ft_strcmp("cd", arg))
+					ft_cd(arg, env);
+				else
+				{
+				ft_putstr("minishell: command not found :");
+				ft_putendl(arg);
+				}
 				input_2d->node = input_2d->node->next;
 			}
 			input_2d = input_2d->next;
