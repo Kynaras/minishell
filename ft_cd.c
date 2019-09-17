@@ -12,21 +12,26 @@
 
 #include "minishell.h"
 
-void	ft_cd(char **destination, t_env_list *env)
+void	ft_cd(char *destination, t_env_list *env)
 {
+	char *buf[PATH_MAX + 1];
+
 	if (!destination)
-		return (0);
-	if (chdir(destination[1]) < 0)
+	{
+		ft_setenv(env, "OLDPWD", ft_getenv("PWD", env), 1);
+		ft_setenv(env, "PWD", ft_getenv("HOME", env ), 1);
+		return ;
+	}
+	chdir(ft_getenv("PWD", env));
+	if (chdir(destination) < 0)
 	{
 		ft_errorfind(destination[1]);
 	}
 	else
 	{
 		ft_setenv(env, "OLDPWD", ft_getenv("PWD", env), 1);
-		ft_setenv(env, "PWD", destination, 1);
+		ft_setenv(env, "PWD", getcwd(buf, PATH_MAX), 1);
 	}
 	return ;
-}
-	
-}
+
 
