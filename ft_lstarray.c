@@ -15,11 +15,11 @@
 char	**ft_lstarray(t_env_list *lst)
 {
 	char		**array;
-	char		*temp;
 	t_env_list	*tmp;
 	size_t		len;
 
 	tmp = lst;
+	len = 0;
 	while (tmp)
 	{
 		len++;

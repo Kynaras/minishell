@@ -87,6 +87,7 @@ int main() //echo, cd, setenv, unsetenv, env, exit
 	extern char **environ;
 	t_args_2d *input_2d;
 	t_env_list *env;
+	pid_t pid;
 
 	input_2d = NULL;
 	env = ft_splitenv(environ);
@@ -100,42 +101,29 @@ int main() //echo, cd, setenv, unsetenv, env, exit
 			{
 				if (ft_strcmp(arg , "echo") != 0 && ft_strcmp(arg, "exit") != 0 && ft_strcmp(arg, "setenv") != 0 && ft_strcmp(arg, "cd") != 0 && ft_strcmp(arg, "unsetenv") != 0 && ft_strcmp(arg, "env") != 0)
 					{
-						if(lstat() != -1)
+						if(ft_findpath(input_2d->node->argument, env) != NULL)
 						{
-							if()
-							{
-
-							}
+							pid = fork();
+							if(pid == 0)
+								execve(ft_findpath(input_2d->node->argument, env), ft_t_lst_array(input_2d->node), ft_lstarray(env));
 							else
-							{
 								wait(NULL);
-							}
-						}
-						else if (ft_findpath())
-						{
-							if (lstat() && ft_permcheck() == -1);
-						}
-						else
-						{
-						ft_putstr("minishell: command not found: ");
-						ft_putendl(arg);
 						}
 					}
 			}
-			else if (input_2d->node->argument &&  ft_strcmp(input_2d->node->argument, "exit") == 0) //no other arguments otherwise "error exit: too many arguments" message;
-			{
-				ft_elstdel(env);
-				return (0);
-			}
-			if (ft_strcmp("env", input_2d->node->argument) == 0)
-				ft_env(env);
-			if (ft_strcmp(input_2d->node->argument, "echo") == 0)
-				ft_echo(input_2d->node);
-			// // if(ft_strstr())
-			// 	ft_setenv(&env, envar, enval);//all chars
-			input_2d->node = input_2d->node->next;
+			// else if (input_2d->node->argument &&  ft_strcmp(input_2d->node->argument, "exit") == 0) //no other arguments otherwise "error exit: too many arguments" message;
+			// {
+			// 	ft_elstdel(env);
+			// 	return (0);
+			// }
+			// if (ft_strcmp("env", input_2d->node->argument) == 0)
+			// 	ft_env(env);
+			// if (ft_strcmp(input_2d->node->argument, "echo") == 0)
+			// 	ft_echo(input_2d->node);
+			// // // if(ft_strstr())
+			// // 	ft_setenv(&env, envar, enval);//all chars
+			// input_2d->node = input_2d->node->next;
 		}
-		else
 			input_2d = input_2d->next;
 	}
 }

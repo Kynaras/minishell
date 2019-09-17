@@ -32,6 +32,7 @@ typedef struct s_e_list
     struct s_e_list *next;
 }              t_env_list;
 
+char		**ft_t_lst_array(t_args *args);
 t_env_list	*ft_splitenv(char **environ);
 void		ft_t_add(t_env_list *lst, t_env_list *new);
 t_env_list	*ft_t_new(char *str, int len);

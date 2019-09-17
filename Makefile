@@ -19,6 +19,10 @@ SRC =	minishell.c \
 		ft_t_args_2d_add.c \
 		ft_t_args_2d_new.c \
 		ft_intro.c \
+		ft_t_lst_array.c \
+		ft_lstarray.c \
+		ft_findpath.c \
+		ft_getenv.c \
 
 
 FLAGS = -g -Wall -Wextra -Werror
