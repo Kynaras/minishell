@@ -48,13 +48,13 @@ int	ft_permfind(char *path)
 	if (!path)
 		return (0);
 	if (ft_strlen(path) > PATH_MAX)
-		return (-1);
+		return (0);
 	else if ((path2 = ft_namecheck(path)))
 		return (0);
 	path2 = ft_strdup(path);
 	lstat(path, &sb);
 	if (S_ISREG(sb.st_mode))
-		return (-2);
+		return (0);
 	if (access(path, F_OK) < 0)
 	{
 		return (ft_subcheck(path, path2, count, &sb));
