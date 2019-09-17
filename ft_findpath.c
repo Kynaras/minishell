@@ -13,10 +13,9 @@
 #include "minishell.h"
 #include <dirent.h>
 
-char	*ft_subjoin(char *exepath, char *path, char *arg, DIR *dr)
+char	*ft_subjoin(char *exepath, char *path, char *arg, char **array)
 {
 	struct stat sb;
-	closedir(dr);
 	ft_join(&exepath, path);
 	ft_join(&exepath, "/");
 	ft_join(&exepath, arg);
@@ -29,6 +28,7 @@ char	*ft_subjoin(char *exepath, char *path, char *arg, DIR *dr)
 			free(exepath);
 			return (NULL);
 		}
+	ft_freearray(array);
 	return (exepath);
 }
 
@@ -50,7 +50,10 @@ char	*ft_findpath(char *arg, t_env_list *env)
 			while ((dir = readdir(dr)))
 			{
 				if (ft_strcmp(dir->d_name, arg) == 0)
-					return (ft_subjoin(exepath, path[i], arg, dr));
+				{
+					closedir(dr);
+					return (ft_subjoin(exepath, path[i], arg, path));
+				}
 			}
 			closedir(dr);
 		}

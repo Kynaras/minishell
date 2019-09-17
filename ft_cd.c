@@ -12,7 +12,7 @@
 
 #include "minishell.h"
 
-void	ft_cd(char **destination)
+void	ft_cd(char **destination, t_env_list *env)
 {
 	if (!destination)
 		return (0);
@@ -20,4 +20,13 @@ void	ft_cd(char **destination)
 	{
 		ft_errorfind(destination[1]);
 	}
+	else
+	{
+		ft_setenv(env, "OLDPWD", ft_getenv("PWD", env), 1);
+		ft_setenv(env, "PWD", destination, 1);
+	}
+	return ;
 }
+	
+}
+
