@@ -11,15 +11,14 @@
 /* ************************************************************************** */
 
 #include "minishell.h"
-#include <dirent.h>
 
 char	*ft_subjoin(char *exepath, char *path, char *arg, char **array)
 {
 	struct stat sb;
+
 	ft_join(&exepath, path);
 	ft_join(&exepath, "/");
 	ft_join(&exepath, arg);
-
 	if (lstat(exepath, &sb) != -1)
 		if (ft_permcheck(exepath) == -1)
 		{
@@ -34,30 +33,27 @@ char	*ft_subjoin(char *exepath, char *path, char *arg, char **array)
 
 char	*ft_findpath(char *arg, t_env_list *env)
 {
-	DIR				*dr;
-	struct dirent	*dir;
-	int				i;
-	char			**path;
-	char			*exepath;
+	t_v_list vars;
 
-	path = ft_strsplit(ft_getenv("PATH", env), ':');
-	exepath = NULL;
-	i = 0;
-	while (path[i])
+	vars.path = ft_strsplit(ft_getenv("PATH", env), ':');
+	vars.exepath = NULL;
+	vars.i = 0;
+	while (vars.path[vars.i])
 	{
-		if ((dr = opendir(path[i])))
+		if ((vars.dr = opendir(vars.path[vars.i])))
 		{
-			while ((dir = readdir(dr)))
+			while ((vars.dir = readdir(vars.dr)))
 			{
-				if (ft_strcmp(dir->d_name, arg) == 0)
+				if (ft_strcmp(vars.dir->d_name, arg) == 0)
 				{
-					closedir(dr);
-					return (ft_subjoin(exepath, path[i], arg, path));
+					closedir(vars.dr);
+					return (ft_subjoin(vars.exepath, vars.path
+					[vars.i], arg, vars.path));
 				}
 			}
-			closedir(dr);
+			closedir(vars.dr);
 		}
-		i++;
+		vars.i++;
 	}
 	ft_putstr("minishell: command not found :");
 	ft_putendl(arg);

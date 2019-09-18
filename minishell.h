@@ -10,6 +10,7 @@
 #	include <stdlib.h>
 #	include <limits.h>
 #	include <sys/stat.h>
+#	include <dirent.h>
 
 # define BUFF_SIZE 2048
 
@@ -31,6 +32,15 @@ typedef struct s_e_list
     char *value;
     struct s_e_list *next;
 }              t_env_list;
+
+typedef struct s_v_list
+{
+	DIR				*dr;
+	struct dirent	*dir;
+	int				i;
+	char			**path;
+	char			*exepath;
+}				t_v_list;
 
 void		ft_cd(char *destination, t_env_list *env);
 void		ft_unsetenv(t_env_list **env, const char *name);
@@ -59,4 +69,6 @@ void		ft_freearray(char **array);
 char		*ft_namecheck(char *path);
 void		ft_intro(void);
 void		ft_time(void);
+int			ft_toolong(char *path);
+
 #endif

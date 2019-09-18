@@ -31,6 +31,8 @@ SRC =	minishell.c \
 		ft_errorfind.c \
 		ft_namecheck.c \
 		ft_slashcount.c \
+		ft_finderror.c \
+		ft_toolong.c \
 
 
 FLAGS = -g -Wall -Wextra -Werror

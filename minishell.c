@@ -110,8 +110,8 @@ int		main() //echo, cd, setenv, unsetenv, env, exit
 	extern char **environ;
 	t_args_2d *input_2d;
 	t_env_list *env;
-	// pid_t pid;
-//	struct stat sb;
+	pid_t pid;
+	struct stat sb;
 
 	input_2d = NULL;
 	env = ft_splitenv(environ);
@@ -123,34 +123,34 @@ int		main() //echo, cd, setenv, unsetenv, env, exit
 			arg = input_2d->node->argument;
 			if (arg) //going to activate each time
 			{
-				// if (ft_strcmp(arg, "echo") != 0 && ft_strcmp(arg, "exit") != 0 && ft_strcmp(arg, "setenv") != 0 && ft_strcmp(arg, "cd") != 0 && ft_strcmp(arg, "unsetenv") != 0 && ft_strcmp(arg, "env") != 0)
-				//	{
-				// 		if (lstat(arg, &sb) != -1)
-				//		{
-				// 			if (ft_findpath(input_2d->node->argument, env) != NULL)
-				// 			{
-				// 				pid = fork();
-				// 				if (pid == 0)
-				// 					execve(ft_findpath(input_2d->node->argument, env), ft_t_lst_array(input_2d->node), ft_lstarray(env));
-				// 				else
-				// 					wait(NULL);
-				// 			}
-				//		}
-				//	}
+				if (ft_strcmp(arg, "echo") != 0 && ft_strcmp(arg, "exit") != 0 && ft_strcmp(arg, "setenv") != 0 && ft_strcmp(arg, "cd") != 0 && ft_strcmp(arg, "unsetenv") != 0 && ft_strcmp(arg, "env") != 0)
+					{
+						if (lstat(arg, &sb) != 0)
+						{
+							if (ft_findpath(input_2d->node->argument, env) != NULL)
+							{
+								pid = fork();
+								if (pid == 0)
+									execve(ft_findpath(input_2d->node->argument, env), ft_t_lst_array(input_2d->node), ft_lstarray(env));
+								else
+									wait(NULL);
+							}
+						}
+					}
 				if (input_2d->node->argument && ft_strcmp(input_2d->node->argument, "exit") == 0) //no other arguments otherwise "error exit: too many arguments" message;
 				{
 					ft_elstdel(env);
 					return (0);
 				}
-				else if (ft_strcmp("env", input_2d->node->argument) == 0)
+				else if (ft_strcmpalpha("env", input_2d->node->argument) == 0)
 					ft_env(env);
-				else if (ft_strcmp(input_2d->node->argument, "echo") == 0)
+				else if (ft_strcmpalpha(input_2d->node->argument, "echo") == 0)
 					ft_echo(input_2d->node);
-				else if (ft_strcmp("setenv", arg) == 0)
+				else if (ft_strcmpalpha("setenv", arg) == 0)
 					ft_setenv(env, input_2d->node->next->argument, input_2d->node->next->next->argument, 1); //all chars
-				else if (ft_strcmp("unsetenv", arg) == 0)
+				else if (ft_strcmpalpha("unsetenv", arg) == 0)
 					ft_unsetenv(&env, input_2d->node->next->argument);
-				else if (ft_strcmp("cd", input_2d->node->argument) == 0)
+				else if (ft_strcmpalpha("cd", input_2d->node->argument) == 0)
 				{
 					if(input_2d->node->next != NULL)
                         ft_cd( input_2d->node->next->argument, env);
@@ -159,7 +159,7 @@ int		main() //echo, cd, setenv, unsetenv, env, exit
 				}
 				else
 				{
-					ft_putstr("minishell: command not found :");
+					ft_putstr("minishell: command not found : ");
 					ft_putendl(arg);
 				}
 				input_2d->node = input_2d->node->next;
