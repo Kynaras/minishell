@@ -3,7 +3,7 @@
 char **ft_t_lst_array(t_args *lst)
 {
     char		**array;
-	t_env_list	*tmp;
+	t_args	*tmp;
 	size_t		len;
 
 	tmp = lst;
