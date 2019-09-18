@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_errorfind.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: keverett <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/09/18 09:27:14 by keverett          #+#    #+#             */
+/*   Updated: 2019/09/18 09:27:16 by keverett         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minishell.h"
 
-int	ft_errorfind(char *path)
+int ft_errorfind(char *path)
 {
 	char *path2;
 	char *tmp;
@@ -10,7 +22,7 @@ int	ft_errorfind(char *path)
 
 	if (!path)
 		return (0);
-	if(ft_strlen(path) > PATH_MAX)
+	if (ft_strlen(path) > PATH_MAX)
 	{
 		ft_putstr("cd : Path length too long: ");
 		ft_putendl(path);
@@ -20,9 +32,9 @@ int	ft_errorfind(char *path)
 	{
 		ft_putstr("cd: file name too long: ");
 		ft_putendl(path2);
-		return(0);
+		return (0);
 	}
-	
+
 	path2 = ft_strdup(path);
 	lstat(path, &sb);
 	if (S_ISREG(sb.st_mode))
@@ -35,14 +47,14 @@ int	ft_errorfind(char *path)
 	if (access(path, F_OK) < 0)
 	{
 		slashes = 1;
-		while(path2 && (count = ft_slashcount(path, slashes)))
+		while (path2 && (count = ft_slashcount(path, slashes)))
 		{
 			tmp = path2;
 			path2 = ft_strsub(path, 0, count + 1);
 			if (access(path2, X_OK) < 0)
 			{
 				count = -5;
-				break ;
+				break;
 			}
 			free(tmp);
 			slashes++;
@@ -58,10 +70,10 @@ int	ft_errorfind(char *path)
 			}
 			else
 			{
-			ft_putstr("cd: no such file or directory: ");
-			ft_putendl(path);
-			free(path2);
-			return (-1);
+				ft_putstr("cd: no such file or directory: ");
+				ft_putendl(path);
+				free(path2);
+				return (-1);
 			}
 		}
 	}
