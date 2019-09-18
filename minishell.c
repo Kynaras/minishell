@@ -150,8 +150,13 @@ int		main() //echo, cd, setenv, unsetenv, env, exit
 					ft_setenv(env, input_2d->node->next->argument, input_2d->node->next->next->argument, 1); //all chars
 				else if (ft_strcmp("unsetenv", arg) == 0)
 					ft_unsetenv(env, input_2d->node->next->argument);
-				else if (ft_strcmp("cd", arg))
-					ft_cd(arg, env);
+				else if (ft_strcmp("cd", input_2d->node->argument) == 0)
+				{
+					if(input_2d->node->next != NULL)
+                        ft_cd( input_2d->node->next->argument, env);
+                    else
+                        ft_cd(NULL, env);
+				}
 				else
 				{
 					ft_putstr("minishell: command not found :");
@@ -159,7 +164,7 @@ int		main() //echo, cd, setenv, unsetenv, env, exit
 				}
 				input_2d->node = input_2d->node->next;
 			}
-			input_2d = input_2d->next;
 		}
+		input_2d = input_2d->next;
 	}
 }
