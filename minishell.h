@@ -11,6 +11,8 @@
 #	include <limits.h>
 #	include <sys/stat.h>
 #	include <dirent.h>
+#	include <sys/types.h>
+#	include <sys/wait.h>
 
 # define BUFF_SIZE 2048
 
@@ -59,7 +61,7 @@ t_args		*ft_t_args_new(char *str);
 t_args_2d	*ft_t_args_2d_new(t_args *lst);
 void		ft_t_args_2d_add(t_args_2d **lst, t_args_2d *new);
 size_t		ft_arr_len(char **arr);
-void		ft_echo(t_args *input);
+void		ft_echo(t_args *input, t_env_list *lst);
 char		**ft_lstarray(t_env_list *lst);
 char		*ft_findpath(char *arg, t_env_list *env);
 char		*ft_getenv(char *var, t_env_list *lst);

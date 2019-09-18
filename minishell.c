@@ -150,7 +150,7 @@ int		main() //echo, cd, setenv, unsetenv, env, exit
 				else if (ft_strcmpalpha("env", input_2d->node->argument) == 0)
 					ft_env(env);
 				else if (ft_strcmpalpha(input_2d->node->argument, "echo") == 0)
-					ft_echo(input_2d->node);
+					ft_echo(input_2d->node, env);
 				else if (ft_strcmpalpha("setenv", arg) == 0)
 					ft_setenv(env, input_2d->node->next->argument, input_2d->node->next->next->argument, 1); //all chars
 				else if (ft_strcmpalpha("unsetenv", arg) == 0)

@@ -12,7 +12,7 @@
 
 #include "minishell.h"
 
-void	ft_echo(t_args *input)
+void	ft_echo(t_args *input, t_env_list *lst)
 {
 	int i;
 
@@ -26,10 +26,18 @@ void	ft_echo(t_args *input)
 	}
 	while (input)
 	{
-		ft_putstr(input->argument);
-		if (input->next != NULL)
-			ft_putchar(' ');
-		input = input->next;
+		if(input->argument[0] == '$')
+			{
+				if (ft_getenv(input->argument + 1, lst))
+					ft_putstr(ft_getenv(input->argument + 1, lst));
+			}
+		else
+		{
+			ft_putstr(input->argument);
+		}
+			if (input->next != NULL)
+				ft_putchar(' ');
+			input = input->next;
 	}
 	if (i == 0)
 		ft_putchar('\n');
