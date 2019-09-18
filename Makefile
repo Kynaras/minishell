@@ -24,6 +24,13 @@ SRC =	minishell.c \
 		ft_lstarray.c \
 		ft_findpath.c \
 		ft_getenv.c \
+		ft_cd.c \
+		ft_freearray.c \
+		ft_permcheck.c \
+		ft_unsetenv.c \
+		ft_errorfind.c \
+		ft_namecheck.c \
+		ft_slashcount.c \
 
 
 FLAGS = -g -Wall -Wextra -Werror

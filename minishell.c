@@ -111,7 +111,7 @@ int		main() //echo, cd, setenv, unsetenv, env, exit
 	t_args_2d *input_2d;
 	t_env_list *env;
 	// pid_t pid;
-	struct stat sb;
+//	struct stat sb;
 
 	input_2d = NULL;
 	env = ft_splitenv(environ);

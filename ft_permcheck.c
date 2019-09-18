@@ -32,19 +32,21 @@ int	ft_subcheck(char *path, char *path2, int count, struct stat *sb)
 	}
 	if (count != -5 && path2[0] != '/')
 	{
-		if (lstat(path, sb) == 0 && stat(path, &sb) == -1)
+		if (lstat(path, sb) == 0 && stat(path, sb) == -1)
 			return (-1);
 		else
 			return (-1);
 	}
+	return (0);
 }
 
-int	ft_permfind(char *path)
+int	ft_permcheck(char *path)
 {
 	char		*path2;
 	struct stat	sb;
 	int			count;
 
+	count = 0;
 	if (!path)
 		return (0);
 	if (ft_strlen(path) > PATH_MAX)
