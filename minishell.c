@@ -125,19 +125,24 @@ int		main() //echo, cd, setenv, unsetenv, env, exit
 			{
 				if (ft_strcmp(arg, "echo") != 0 && ft_strcmp(arg, "exit") != 0 && ft_strcmp(arg, "setenv") != 0 && ft_strcmp(arg, "cd") != 0 && ft_strcmp(arg, "unsetenv") != 0 && ft_strcmp(arg, "env") != 0)
 					{
-						if (lstat(arg, &sb) != 0)
+						if (lstat(arg, &sb) != -1)
 						{
-							if (ft_findpath(input_2d->node->argument, env) != NULL)
-							{
+								pid = fork();
+								if (pid == 0)
+									execve(arg, ft_t_lst_array(input_2d->node), ft_lstarray(env));
+								else
+									wait(NULL);
+						}
+						else if (ft_findpath(input_2d->node->argument, env) != NULL)
+						{
 								pid = fork();
 								if (pid == 0)
 									execve(ft_findpath(input_2d->node->argument, env), ft_t_lst_array(input_2d->node), ft_lstarray(env));
 								else
 									wait(NULL);
-							}
-						}
+						}		
 					}
-				if (input_2d->node->argument && ft_strcmp(input_2d->node->argument, "exit") == 0) //no other arguments otherwise "error exit: too many arguments" message;
+				else if (input_2d->node->argument && ft_strcmp(input_2d->node->argument, "exit") == 0) //no other arguments otherwise "error exit: too many arguments" message;
 				{
 					ft_elstdel(env);
 					return (0);
