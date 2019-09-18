@@ -67,7 +67,7 @@ int	ft_finderror(char *path)
 	}
 	if (access(path2, X_OK) < 0)
 	{
-		ft_putstr("Permission denied: ");
+		ft_putstr("cd: Permission denied: ");
 		ft_putendl(path);
 		free(path2);
 		return (-1);

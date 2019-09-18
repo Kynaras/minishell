@@ -14,12 +14,30 @@
 
 void	ft_echo(t_args *input)
 {
+	int i;
+
+	i = 0;
 	input = input->next;
+	if(!ft_strcmp("-n", input->argument) || !ft_strcmp("-", input->argument))
+	{
+		if (!ft_strcmp("-n", input->argument))
+			i = 1;
+		input = input->next;
+	}
 	while (input)
 	{
 		ft_putstr(input->argument);
-		ft_putchar(' ');
+		if (input->next != NULL)
+			ft_putchar(' ');
 		input = input->next;
 	}
-	ft_putchar('\n');
+	if (i == 0)
+		ft_putchar('\n');
+	else
+	{
+		ft_putstr("\e[30m\e[47m");
+		ft_putstr("%");
+		ft_putstr("\033[0m");
+		ft_putchar('\n');
+	}
 }
