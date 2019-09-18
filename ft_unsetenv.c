@@ -12,10 +12,12 @@
 
 #include "minishell.h"
 
-void	ft_unsetenv(t_env_list *lst, const char *name)
+void	ft_unsetenv(t_env_list **env, const char *name)
 {
+	t_env_list *lst;
 	t_env_list *tmp;
 
+	lst = *env;
 	tmp = NULL;
 	while (lst)
 	{
@@ -29,7 +31,9 @@ void	ft_unsetenv(t_env_list *lst, const char *name)
 		free(lst->name);
 		free(lst->value);
 		if (tmp)
-			tmp->next = lst;
+			tmp->next = lst->next;
+		else if (!tmp)
+			*env = lst->next;
 		free(lst);
 	}
 	return ;

@@ -149,7 +149,7 @@ int		main() //echo, cd, setenv, unsetenv, env, exit
 				else if (ft_strcmp("setenv", arg) == 0)
 					ft_setenv(env, input_2d->node->next->argument, input_2d->node->next->next->argument, 1); //all chars
 				else if (ft_strcmp("unsetenv", arg) == 0)
-					ft_unsetenv(env, input_2d->node->next->argument);
+					ft_unsetenv(&env, input_2d->node->next->argument);
 				else if (ft_strcmp("cd", input_2d->node->argument) == 0)
 				{
 					if(input_2d->node->next != NULL)

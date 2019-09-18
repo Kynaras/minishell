@@ -16,7 +16,6 @@ int	ft_env(t_env_list *lst)
 {
 	while (lst)
 	{
-		ft_putchar('o');
 		ft_putstr(lst->name);
 		ft_putchar('=');
 		ft_putstr(lst->value);
