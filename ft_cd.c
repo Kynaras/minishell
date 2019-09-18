@@ -25,7 +25,7 @@ void	ft_cd(char *destination, t_env_list *env)
 	chdir(ft_getenv("PWD", env));
 	if (chdir(destination) < 0)
 	{
-		ft_errorfind(destination[1]);
+		ft_errorfind(destination);
 	}
 	else
 	{
