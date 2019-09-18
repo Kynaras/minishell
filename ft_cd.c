@@ -19,7 +19,7 @@ void	ft_cd(char *destination, t_env_list *env)
 	if (!destination)
 	{
 		ft_setenv(env, "OLDPWD", ft_getenv("PWD", env), 1);
-		ft_setenv(env, "PWD", ft_getenv("HOME", env ), 1);
+		ft_setenv(env, "PWD", ft_getenv("HOME", env), 1);
 		return ;
 	}
 	chdir(ft_getenv("PWD", env));
@@ -33,5 +33,4 @@ void	ft_cd(char *destination, t_env_list *env)
 		ft_setenv(env, "PWD", getcwd(buf, PATH_MAX), 1);
 	}
 	return ;
-
-
+}
