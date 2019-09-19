@@ -1,15 +1,15 @@
 #include "minishell.h"
 #include "libft/libft.h"
 
-void	ft_arg_split(t_args_2d **input, char *tmp)
+void ft_arg_split(t_args_2d **input, char *tmp)
 {
 	int i;
 	int j;
 
-	if (*input == NULL && ft_strlen(tmp) != 0)
+	if (*input == NULL && ft_strlen(tmp) != 0 && ft_strcmp(tmp, "\n") != 0)
 		*input = ft_t_args_2d_new(NULL);
 	i = 0;
-	while (ft_strlen(tmp) != 0 && tmp[i])
+	while (ft_strlen(tmp) != 0 && tmp[i] && ft_strcmp(tmp, "\n") != 0)
 	{
 		j = 0;
 		if (ft_iswhitespace(tmp[i]) != 1 && tmp[i] != '"')
@@ -37,7 +37,7 @@ void	ft_arg_split(t_args_2d **input, char *tmp)
 	}
 }
 
-char	*ft_read_quote(char *tmp, int qcount)
+char *ft_read_quote(char *tmp, int qcount)
 {
 	int i;
 	i = 0;
@@ -55,7 +55,7 @@ char	*ft_read_quote(char *tmp, int qcount)
 	return tmp;
 }
 
-char	*ft_read_dquote(char *tmp, int count)
+char *ft_read_dquote(char *tmp, int count)
 {
 	int i;
 	i = 0;
@@ -73,7 +73,7 @@ char	*ft_read_dquote(char *tmp, int count)
 	return tmp;
 }
 
-int		ft_read_args(t_args_2d **input_2d, int count)
+int ft_read_args(t_args_2d **input_2d, int count)
 {
 	char *tmp;
 	int i;
@@ -97,14 +97,14 @@ int		ft_read_args(t_args_2d **input_2d, int count)
 		}
 		if (count == 1)
 			tmp = ft_read_dquote(tmp, count);
-		if(qcount == 1)
+		if (qcount == 1)
 			tmp = ft_read_quote(tmp, qcount);
 		ft_arg_split(input_2d, tmp);
 	}
 	return 1;
 }
 
-int		main() //echo, cd, setenv, unsetenv, env, exit
+int main() //echo, cd, setenv, unsetenv, env, exit
 {
 	char *arg;
 	extern char **environ;
@@ -118,30 +118,30 @@ int		main() //echo, cd, setenv, unsetenv, env, exit
 	ft_intro();
 	while (input_2d || ft_read_args(&input_2d, 0))
 	{
-		if (input_2d->node)
+		if (input_2d != NULL && input_2d->node)
 		{
 			arg = input_2d->node->argument;
 			if (arg) //going to activate each time
 			{
 				if (ft_strcmp(arg, "echo") != 0 && ft_strcmp(arg, "exit") != 0 && ft_strcmp(arg, "setenv") != 0 && ft_strcmp(arg, "cd") != 0 && ft_strcmp(arg, "unsetenv") != 0 && ft_strcmp(arg, "env") != 0)
+				{
+					if (lstat(arg, &sb) != -1)
 					{
-						if (lstat(arg, &sb) != -1)
-						{
-								pid = fork();
-								if (pid == 0)
-									execve(arg, ft_t_lst_array(input_2d->node), ft_lstarray(env));
-								else
-									wait(NULL);
-						}
-						else if (ft_findpath(input_2d->node->argument, env) != NULL)
-						{
-								pid = fork();
-								if (pid == 0)
-									execve(ft_findpath(input_2d->node->argument, env), ft_t_lst_array(input_2d->node), ft_lstarray(env));
-								else
-									wait(NULL);
-						}		
+						pid = fork();
+						if (pid == 0)
+							execve(arg, ft_t_lst_array(input_2d->node), ft_lstarray(env));
+						else
+							wait(NULL);
 					}
+					else if (ft_findpath(input_2d->node->argument, env) != NULL)
+					{
+						pid = fork();
+						if (pid == 0)
+							execve(ft_findpath(input_2d->node->argument, env), ft_t_lst_array(input_2d->node), ft_lstarray(env));
+						else
+							wait(NULL);
+					}
+				}
 				else if (input_2d->node->argument && ft_strcmp(input_2d->node->argument, "exit") == 0) //no other arguments otherwise "error exit: too many arguments" message;
 				{
 					ft_elstdel(env);
@@ -157,19 +157,19 @@ int		main() //echo, cd, setenv, unsetenv, env, exit
 					ft_unsetenv(&env, input_2d->node->next->argument);
 				else if (ft_strcmpalpha("cd", input_2d->node->argument) == 0)
 				{
-					if(input_2d->node->next != NULL)
-                        ft_cd( input_2d->node->next->argument, env);
-                    else
-                        ft_cd(NULL, env);
+					if (input_2d->node->next != NULL)
+						ft_cd(input_2d->node->next->argument, env);
+					else
+						ft_cd(NULL, env);
 				}
 				else
 				{
 					ft_putstr("minishell: command not found : ");
 					ft_putendl(arg);
 				}
-				input_2d->node = input_2d->node->next;
 			}
 		}
-		input_2d = input_2d->next;
+		if (input_2d)
+			input_2d = input_2d->next;
 	}
 }
