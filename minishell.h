@@ -44,6 +44,8 @@ typedef struct s_v_list
 	char			*exepath;
 }				t_v_list;
 
+int			ft_read_args(t_args_2d **input_2d, int count);
+void		ft_arg_split(t_args_2d **input, char **colon);
 void		ft_cd(char *destination, t_env_list *env);
 void		ft_unsetenv(t_env_list **env, const char *name);
 char		**ft_t_lst_array(t_args *args);

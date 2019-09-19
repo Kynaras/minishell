@@ -33,7 +33,8 @@ SRC =	minishell.c \
 		ft_slashcount.c \
 		ft_finderror.c \
 		ft_toolong.c \
-
+		ft_arg_split.c \
+		ft_read_args.c \
 
 FLAGS = -g -Wall -Wextra -Werror
 all: $(NAME)
