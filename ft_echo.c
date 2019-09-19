@@ -37,6 +37,11 @@ void	ft_echo(t_args *input, t_env_list *lst)
 
 	i = 0;
 	input = input->next;
+	if (!input)
+	{
+		ft_putchar('\n');
+		return ;
+	}
 	if (!ft_strcmp("-n", input->argument) || !ft_strcmp("-", input->argument))
 	{
 		if (!ft_strcmp("-n", input->argument))
