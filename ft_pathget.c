@@ -23,7 +23,7 @@ char	**ft_pathget(t_env_list *env)
 	i = 0;
 	while (env)
 	{
-		if (!ft_strcmp(env->name, "PATH"))
+		if (!ft_strcmpalpha(env->name, "PATH"))
 			break ;
 		env = env->next;
 	}
