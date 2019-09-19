@@ -20,7 +20,6 @@ char *ft_read_quote(char *tmp, int qcount)
 
 char *ft_read_dquote(char *tmp, int count)
 {
-	char *buffer;
 	int i;
 	i = 0;
 

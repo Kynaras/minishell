@@ -5,7 +5,13 @@ pid_t childpid;
 
 void    ft_kill()
 {
-	kill(childpid, SIGKILL);
+	if (childpid != 0)
+	{
+		kill(childpid, SIGKILL);
+		childpid = 0;
+	}
+	ft_putstr("\b");
+	ft_putchar('\n');
 }
 
 int main()
