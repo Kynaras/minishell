@@ -35,6 +35,10 @@ SRC =	minishell.c \
 		ft_toolong.c \
 		ft_arg_split.c \
 		ft_read_args.c \
+		ft_namecomplete.c \
+		ft_mergarray.c \
+		ft_namegen.c \
+		ft_pathget.c \
 
 FLAGS = -g -Wall -Wextra -Werror
 all: $(NAME)

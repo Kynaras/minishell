@@ -20,10 +20,11 @@ char *ft_read_quote(char *tmp, int qcount)
 
 char *ft_read_dquote(char *tmp, int count)
 {
+	char *buffer;
 	int i;
 	i = 0;
 
-	ft_join(&tmp, readline("dquote> "));
+	ft_join(&tmp, (buffer = readline("dquote> ")));
 	count = 0;
 	while (tmp[i])
 	{

@@ -77,5 +77,9 @@ char		*ft_namecheck(char *path);
 void		ft_intro(void);
 void		ft_time(void);
 int			ft_toolong(char *path);
+char		**ft_namecomplete(const char *, int, int);
+char		*ft_namegen(const char *, int);
+char 		**ft_megarray(char **array);
+char		**ft_pathget(t_env_list *env);
 
 #endif

@@ -1,6 +1,13 @@
 #include "minishell.h"
 #include "libft/libft.h"
 
+pid_t childpid;
+
+void    ft_kill()
+{
+	kill(childpid, SIGKILL);
+}
+
 int main()
 {
 	char *arg;
@@ -10,6 +17,7 @@ int main()
 	pid_t pid;
 	struct stat sb;
 
+	rl_attempted_completion_function = ft_namecomplete;
 	signal(SIGINT, ft_kill);
 	input_2d = NULL;
 	env = ft_splitenv(environ);
@@ -25,21 +33,23 @@ int main()
 				{
 					if (lstat(arg, &sb) != -1)
 					{
-						if ((pid = fork()) == 0)
-							execve(arg, ft_t_lst_array(input_2d->node), ft_lstarray(env));
-						else
+						if ((pid = fork()) != 0)
 						{
 							childpid = pid;
 							wait(NULL);
 						}
+						else
+							execve(arg, ft_t_lst_array(input_2d->node), ft_lstarray(env));
 					}
 					else if (ft_findpath(input_2d->node->argument, env) != NULL)
 					{
-						pid = fork();
-						if (pid == 0)
-							execve(ft_findpath(input_2d->node->argument, env), ft_t_lst_array(input_2d->node), ft_lstarray(env));
-						else
+						if ((pid = fork()) != 0)
+						{
+							childpid = pid;
 							wait(NULL);
+						}
+						else
+							execve(ft_findpath(input_2d->node->argument, env), ft_t_lst_array(input_2d->node), ft_lstarray(env));
 					}
 				}
 				else if (input_2d->node->argument && ft_strcmp(input_2d->node->argument, "exit") == 0)

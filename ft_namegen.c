@@ -1,31 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_pathget.c                                       :+:      :+:    :+:   */
+/*   ft_namegen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: keverett <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/16 12:21:46 by keverett          #+#    #+#             */
-/*   Updated: 2019/09/16 12:26:55 by keverett         ###   ########.fr       */
+/*   Created: 2019/09/19 13:19:44 by keverett          #+#    #+#             */
+/*   Updated: 2019/09/19 13:21:02 by keverett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
-#include <dirent.h>
 
-char	**ft_pathget(t_env_list *env)
+char *ft_namegen(const char *text, int state)
 {
-	int				i;
+	extern char **environ;
+	t_env_list *env = ft_splitenv(environ);
+	static int len;
+    char *name;
+	static int i;
+	static char **array;
 
-	i = 0;
-	while (env)
+	
+
+    if (!state) {
+        i = -1;
+        len = strlen(text);
+		array = ft_megarray(ft_pathget(env));
+    }
+	while (array[++i])
 	{
-		if (!ft_strcmpalpha(env->name, "PATH"))
-			break ;
-		env = env->next;
+				if (ft_strncmp(array[i], text, len) == 0)
+				{
+					name = ft_strdup(array[i]);
+					return (name);
+				}
 	}
-	if (env)
-		return (ft_strsplit(env->value, ';'));
-	else
-		return (NULL);
+	return (NULL);
 }
