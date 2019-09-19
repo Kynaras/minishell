@@ -3,7 +3,7 @@
 
 pid_t childpid;
 
-void    ft_kill()
+void ft_kill()
 {
 	kill(childpid, SIGKILL);
 }
@@ -30,30 +30,7 @@ int main()
 			arg = input_2d->node->argument;
 			if (arg)
 			{
-				if (ft_strcmp(arg, "echo") != 0 && ft_strcmp(arg, "exit") != 0 && ft_strcmp(arg, "setenv") != 0 && ft_strcmp(arg, "cd") != 0 && ft_strcmp(arg, "unsetenv") != 0 && ft_strcmp(arg, "env") != 0)
-				{
-					if (lstat(arg, &sb) != -1)
-					{
-						if ((pid = fork()) != 0)
-						{
-							childpid = pid;
-							wait(NULL);
-						}
-						else
-							execve(arg, ft_t_lst_array(input_2d->node), ft_lstarray(env));
-					}
-					else if (ft_findpath(input_2d->node->argument, env) != NULL)
-					{
-						if ((pid = fork()) != 0)
-						{
-							childpid = pid;
-							wait(NULL);
-						}
-						else
-							execve(ft_findpath(input_2d->node->argument, env), ft_t_lst_array(input_2d->node), ft_lstarray(env));
-					}
-				}
-				else if (input_2d->node->argument && ft_strcmp(input_2d->node->argument, "exit") == 0)
+				if (input_2d->node->argument && ft_strcmp(input_2d->node->argument, "exit") == 0)
 				{
 					free(input_2d->node->argument);
 					free(input_2d->node);
@@ -76,6 +53,26 @@ int main()
 					else
 						ft_cd(NULL, env);
 				}
+				else if (lstat(arg, &sb) != -1)//execve
+				{
+					if ((pid = fork()) != 0)
+					{
+						childpid = pid;
+						wait(NULL);
+					}
+					else
+						execve(arg, ft_t_lst_array(input_2d->node), ft_lstarray(env));
+				}
+				else if (ft_findpath(input_2d->node->argument, env) != NULL)
+				{
+					if ((pid = fork()) != 0)
+					{
+						childpid = pid;
+						wait(NULL);
+					}
+					else
+						execve(ft_findpath(input_2d->node->argument, env), ft_t_lst_array(input_2d->node), ft_lstarray(env));
+				}
 				else
 				{
 					ft_putstr("minishell: command not found : ");
@@ -88,7 +85,7 @@ int main()
 			tmp = input_2d;
 			free(input_2d->node->argument);
 			free(input_2d->node);
-			input_2d = input_2d->next;//free the pointer before we go to the next one
+			input_2d = input_2d->next; //free the pointer before we go to the next one
 			free(tmp);
 		}
 	}
