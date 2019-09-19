@@ -33,12 +33,11 @@ void	ft_cd(char *destination, t_env_list *env)
 		else
 		{
 			temp = ft_strdup(ft_getenv("OLDPWD", env));
-			//ft_putendl(temp);
 			ft_setenv(env, "OLDPWD", ft_getenv("PWD", env), 1);
 			ft_setenv(env, "PWD", temp, 1);
 			free(temp);
 			return ;
-		}	
+		}
 	}
 	chdir(ft_getenv("PWD", env));
 	if (chdir(destination) < 0)
