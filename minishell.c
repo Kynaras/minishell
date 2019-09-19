@@ -8,14 +8,72 @@ void ft_kill()
 	kill(childpid, SIGKILL);
 }
 
+void ft_error(char *arg)
+{
+		ft_putstr("minishell: command not found : ");
+		ft_putendl(arg);
+}
+
+void ft_execve(char **arg, t_args_2d **input_2d, t_env_list **env)
+{
+	pid_t pid;
+	struct stat sb;
+	
+	if (lstat(*arg, &sb) != -1)
+	{
+		if ((pid = fork()) != 0)
+		{
+			childpid = pid;
+			wait(NULL);
+		}
+		else
+			execve(*arg, ft_t_lst_array((*input_2d)->node), ft_lstarray(*env));
+	}
+	else if (ft_findpath((*input_2d)->node->argument, *env) != NULL)
+	{
+		if ((pid = fork()) != 0)
+		{
+			childpid = pid;
+			wait(NULL);
+		}
+		else
+			execve(ft_findpath((*input_2d)->node->argument, *env),
+			ft_t_lst_array((*input_2d)->node), ft_lstarray(*env));
+	}
+	else
+		ft_error(*arg);
+}
+
+
+
+void ft_minishell_mand(t_env_list **env, t_args_2d **input_2d, char **arg)
+{
+
+	if (ft_strcmpalpha("env", (*input_2d)->node->argument) == 0)
+		ft_env(*env);
+	else if (ft_strcmpalpha((*input_2d)->node->argument, "echo") == 0)
+		ft_echo((*input_2d)->node, *env);
+	else if (ft_strcmpalpha("setenv", *arg) == 0)
+		ft_setenv(*env, (*input_2d)->node->next->argument, (*input_2d)->node->next->next->argument, 1);
+	else if (ft_strcmpalpha("unsetenv", *arg) == 0)
+		ft_unsetenv(env, (*input_2d)->node->next->argument);
+	else if (ft_strcmpalpha("cd", (*input_2d)->node->argument) == 0)
+	{
+		if ((*input_2d)->node->next != NULL)
+			ft_cd((*input_2d)->node->next->argument, *env);
+		else
+			ft_cd(NULL, *env);
+	}
+	else
+		ft_execve(arg, input_2d, env);
+}
+
 int main()
 {
 	char *arg;
 	extern char **environ;
 	t_args_2d *input_2d;
 	t_env_list *env;
-	pid_t pid;
-	struct stat sb;
 	t_args_2d *tmp;
 
 	rl_attempted_completion_function = ft_namecomplete;
@@ -38,42 +96,44 @@ int main()
 					ft_elstdel(env);
 					return (0);
 				}
-				else if (ft_strcmpalpha("env", input_2d->node->argument) == 0)
-					ft_env(env);
-				else if (ft_strcmpalpha(input_2d->node->argument, "echo") == 0)
-					ft_echo(input_2d->node, env);
-				else if (ft_strcmpalpha("setenv", arg) == 0)
-					ft_setenv(env, input_2d->node->next->argument, input_2d->node->next->next->argument, 1);
-				else if (ft_strcmpalpha("unsetenv", arg) == 0)
-					ft_unsetenv(&env, input_2d->node->next->argument);
-				else if (ft_strcmpalpha("cd", input_2d->node->argument) == 0)
-				{
-					if (input_2d->node->next != NULL)
-						ft_cd(input_2d->node->next->argument, env);
-					else
-						ft_cd(NULL, env);
-				}
-				else if (lstat(arg, &sb) != -1)//execve
-				{
-					if ((pid = fork()) != 0)
-					{
-						childpid = pid;
-						wait(NULL);
-					}
-					else
-						execve(arg, ft_t_lst_array(input_2d->node), ft_lstarray(env));
-				}
-				else if (ft_findpath(input_2d->node->argument, env) != NULL)
-				{
-					if ((pid = fork()) != 0)
-					{
-						childpid = pid;
-						wait(NULL);
-					}
-					else
-						execve(ft_findpath(input_2d->node->argument, env), ft_t_lst_array(input_2d->node), ft_lstarray(env));
-				}
 				else
+					ft_minishell_mand(&env, &input_2d, &arg);
+				// else if (ft_strcmpalpha("env", input_2d->node->argument) == 0)
+				// 	ft_env(env);
+				// else if (ft_strcmpalpha(input_2d->node->argument, "echo") == 0)
+				// 	ft_echo(input_2d->node, env);
+				// else if (ft_strcmpalpha("setenv", arg) == 0)
+				// 	ft_setenv(env, input_2d->node->next->argument, input_2d->node->next->next->argument, 1);
+				// else if (ft_strcmpalpha("unsetenv", arg) == 0)
+				// 	ft_unsetenv(&env, input_2d->node->next->argument);
+				// else if (ft_strcmpalpha("cd", input_2d->node->argument) == 0)
+				// {
+				// 	if (input_2d->node->next != NULL)
+				// 		ft_cd(input_2d->node->next->argument, env);
+				// 	else
+				// 		ft_cd(NULL, env);
+				// }
+				// if (lstat(arg, &sb) != -1) //execve
+				// {
+				// 	if ((pid = fork()) != 0)
+				// 	{
+				// 		childpid = pid;
+				// 		wait(NULL);
+				// 	}
+				// 	else
+				// 		execve(arg, ft_t_lst_array(input_2d->node), ft_lstarray(env));
+				// }
+				// else if (ft_findpath(input_2d->node->argument, env) != NULL)
+				// {
+				// 	if ((pid = fork()) != 0)
+				// 	{
+				// 		childpid = pid;
+				// 		wait(NULL);
+				// 	}
+				// 	else
+				// 		execve(ft_findpath(input_2d->node->argument, env), ft_t_lst_array(input_2d->node), ft_lstarray(env));
+				// }
+				// else
 				{
 					ft_putstr("minishell: command not found : ");
 					ft_putendl(arg);
