@@ -1,6 +1,14 @@
 #include "minishell.h"
 #include "libft/libft.h"
 
+void    ft_kill(int num)
+{
+	int i;
+	
+	i = num;
+    kill(childpid, SIGTERM);
+}
+
 void ft_arg_split(t_args_2d **input, char **colon) //return 2d_node
 {
 	int i;
@@ -129,6 +137,7 @@ int main() //echo, cd, setenv, unsetenv, env, exit
 	pid_t pid;
 	struct stat sb;
 
+	signal(SIGINT, ft_kill);
 	input_2d = NULL;
 	env = ft_splitenv(environ);
 	ft_intro();
@@ -143,11 +152,13 @@ int main() //echo, cd, setenv, unsetenv, env, exit
 				{
 					if (lstat(arg, &sb) != -1)
 					{
-						pid = fork();
-						if (pid == 0)
+						if ((pid = fork()) == 0)
 							execve(arg, ft_t_lst_array(input_2d->node), ft_lstarray(env));
 						else
+						{
+							childpid = pid;
 							wait(NULL);
+						}
 					}
 					else if (ft_findpath(input_2d->node->argument, env) != NULL)
 					{

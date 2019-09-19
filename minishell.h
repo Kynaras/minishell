@@ -13,8 +13,11 @@
 #	include <dirent.h>
 #	include <sys/types.h>
 #	include <sys/wait.h>
+#	include <signal.h>
 
 # define BUFF_SIZE 2048
+
+pid_t childpid;
 
 typedef struct	s_args
 {
