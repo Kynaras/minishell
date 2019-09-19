@@ -12,6 +12,48 @@
 
 #include "minishell.h"
 
+void	ft_subbly(t_env_list *env)
+{
+	char buf[PATH_MAX + 1];
+
+	ft_setenv(env, "OLDPWD", ft_getenv("PWD", env), 1);
+	ft_setenv(env, "PWD", getcwd(buf, PATH_MAX), 1);
+}
+
+void	ft_subfunc(t_env_list *env)
+{
+	ft_setenv(env, "OLDPWD", ft_getenv("PWD", env), 1);
+	chdir(ft_getnev("HOME", env));
+	ft_setenv(env, "PWD", ft_getenv("HOME", env), 1);
+}
+
+void	ft_home(t_env_list *env, char **temp, char **destination)
+{
+	ft_join(temp, ft_getenv("HOME", env));
+	ft_join(temp, "/");
+	ft_join(temp, destination + 2);
+	destination = temp;
+}
+
+void	ft_homer(t_env_list *env, char *temp)
+{
+	if (!ft_strcmp(ft_getenv("OLDPWD", env), ft_getenv("PWD", env)))
+	{
+		ft_putendl("~");
+		return ;
+	}
+	else
+	{
+		temp = ft_strdup(ft_getenv("OLDPWD", env));
+		ft_setenv(env, "OLDPWD", ft_getenv("PWD", env), 1);
+		ft_setenv(env, "PWD", temp, 1);
+		chdir(temp);
+		ft_putendl(temp);
+		free(temp);
+		return ;
+	}
+}
+
 void	ft_cd(char *destination, t_env_list *env)
 {
 	char buf[PATH_MAX + 1];
@@ -20,42 +62,21 @@ void	ft_cd(char *destination, t_env_list *env)
 	temp = NULL;
 	if (!destination)
 	{
-		ft_setenv(env, "OLDPWD", ft_getenv("PWD", env), 1);
-		ft_setenv(env, "PWD", ft_getenv("HOME", env), 1);
+		ft_subfunc(env);
 		return ;
 	}
-	if (destination[0] == '~' && destination[1] == '/' && destination[2] != '\0')
+	if (!ft_strcmp(destination, "-"))
 	{
-		ft_join(&temp, ft_getenv("HOME", env));
-		ft_join(&temp, "/");
-		ft_join(&temp, destination + 2);
-		destination = temp;	
+		ft_homer(env, temp);
+		return ;
 	}
-	else if (!ft_strcmp(destination, "-"))
-	{
-		if (!ft_strcmp(ft_getenv("OLDPWD", env), ft_getenv("PWD", env)))
-		{
-			ft_putendl("~");
-			return ;
-		}
-		else
-		{
-			temp = ft_strdup(ft_getenv("OLDPWD", env));
-			ft_setenv(env, "OLDPWD", ft_getenv("PWD", env), 1);
-			ft_setenv(env, "PWD", temp, 1);
-			chdir(temp);
-			ft_putendl(temp);
-			free(temp);
-			return ;
-		}
-	}
+	if (destination[0] == '~' && destination[1] == '/'
+	&& destination[2] != '\0')
+		ft_home(env, &temp, &destination);
 	if (chdir(destination) < 0)
 		ft_finderror(destination);
 	else
-	{
-		ft_setenv(env, "OLDPWD", ft_getenv("PWD", env), 1);
-		ft_setenv(env, "PWD", getcwd(buf, PATH_MAX), 1);
-	}
+		ft_subbly(env);
 	if (temp)
 		free(temp);
 	return ;

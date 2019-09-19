@@ -14,7 +14,8 @@
 
 void	ft_suby(t_args *input, t_env_list *lst)
 {
-	t_args *tmp;
+	t_args	*tmp;
+
 	while (input)
 	{
 		tmp = input;
