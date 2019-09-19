@@ -1,40 +1,52 @@
 #include "minishell.h"
 #include "libft/libft.h"
 
-void ft_arg_split(t_args_2d **input, char *tmp)
+void ft_arg_split(t_args_2d **input, char **colon) //return 2d_node
 {
 	int i;
 	int j;
-
-	if (*input == NULL && ft_strlen(tmp) != 0 && ft_strcmp(tmp, "\n") != 0)
-		*input = ft_t_args_2d_new(NULL);
-	i = 0;
-	while (ft_strlen(tmp) != 0 && tmp[i] && ft_strcmp(tmp, "\n") != 0)
+	int x;
+	t_args_2d *argtmp;
+	x = 0;
+	while (colon[x])
 	{
-		j = 0;
-		if (ft_iswhitespace(tmp[i]) != 1 && tmp[i] != '"')
+		if (argtmp == NULL && ft_strlen(colon[x]) != 0 && ft_strcmp(colon[x], "\n") != 0)
+			*input = ft_t_args_2d_new(NULL);
+		else
+			ft_t_args_2d_add(input, ft_t_args_2d_new(NULL));
+		argtmp = *input;
+		while(argtmp->next)
+			argtmp = argtmp->next;
+		i = 0;
+		while (ft_strlen(colon[x]) != 0 && colon[x][i] && ft_strcmp(colon[x], "\n") != 0)
 		{
-			while (tmp[i + j] && ft_iswhitespace(tmp[i + j]) != 1)
-				j++;
-			if ((*input)->node == NULL)
-				(*input)->node = ft_t_args_new(ft_strsub(tmp, i, j));
-			else
-				ft_t_args_add(&((*input)->node), ft_t_args_new(ft_strsub(tmp, i, j)));
-			i = i + j;
-		}
-		else if (tmp[i] == '"')
-		{
+			j = 0;
+			if (ft_iswhitespace(colon[x][i]) != 1 && colon[x][i] != '"')
+			{
+				while (colon[x][i + j] && ft_iswhitespace(colon[x][i + j]) != 1)
+					j++;
+				if (argtmp->node == NULL)
+					argtmp->node = ft_t_args_new(ft_strsub(colon[x], i, j));
+				else
+					ft_t_args_add(&(argtmp->node), ft_t_args_new(ft_strsub(colon[x], i, j)));
+				i = i + j;
+			}
+			else if (colon[x][i] == '"')
+			{
+				i++;
+				while (colon[x][i + j] && colon[x][i + j] != '"')
+					j++;
+				if (argtmp->node == NULL)
+					argtmp->node = ft_t_args_new(ft_strsub(colon[x], i, j));
+				else
+					ft_t_args_add(&(argtmp->node), ft_t_args_new(ft_strsub(colon[x], i, j)));
+				i = i + j;
+			}
 			i++;
-			while (tmp[i + j] && tmp[i + j] != '"')
-				j++;
-			if ((*input)->node == NULL)
-				(*input)->node = ft_t_args_new(ft_strsub(tmp, i, j));
-			else
-				ft_t_args_add(&((*input)->node), ft_t_args_new(ft_strsub(tmp, i, j)));
-			i = i + j;
 		}
-		i++;
+		x++;
 	}
+
 }
 
 char *ft_read_quote(char *tmp, int qcount)
@@ -78,11 +90,13 @@ int ft_read_args(t_args_2d **input_2d, int count)
 	char *tmp;
 	int i;
 	int qcount;
+	char **colon;
 
 	qcount = 0;
 	// if (*input_2d == NULL)
 	// 	*input_2d = ft_t_args_2d_new(NULL);
 	i = 0;
+	colon = NULL;
 	tmp = readline("$> ");
 	add_history(tmp);
 	if (tmp)
@@ -99,8 +113,10 @@ int ft_read_args(t_args_2d **input_2d, int count)
 			tmp = ft_read_dquote(tmp, count);
 		if (qcount == 1)
 			tmp = ft_read_quote(tmp, qcount);
-		ft_arg_split(input_2d, tmp);
-	}
+		colon = ft_strsplit(tmp, ';');
+		if(colon != NULL)
+			ft_arg_split(input_2d, colon);
+		}
 	return 1;
 }
 
