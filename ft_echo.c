@@ -14,8 +14,10 @@
 
 void	ft_suby(t_args *input, t_env_list *lst)
 {
+	t_args *tmp;
 	while (input)
 	{
+		tmp = input;
 		if (input->argument[0] == '$')
 		{
 			if (ft_getenv(input->argument + 1, lst))
@@ -24,10 +26,12 @@ void	ft_suby(t_args *input, t_env_list *lst)
 		else
 		{
 			ft_putstr(input->argument);
+			free(input->argument);
 		}
 		if (input->next != NULL)
 			ft_putchar(' ');
 		input = input->next;
+		free(tmp);
 	}
 }
 

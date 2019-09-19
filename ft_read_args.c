@@ -69,6 +69,8 @@ int ft_read_args(t_args_2d **input_2d, int count)
 			tmp = ft_read_quote(tmp, qcount);
 		if((colon = ft_strsplit(tmp, ';')) && colon != NULL)
 			ft_arg_split(input_2d, colon);
+        ft_strdel(&tmp);
+        ft_freearray(colon);
 	}
 	return 1;
 }

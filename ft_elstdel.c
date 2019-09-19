@@ -14,10 +14,14 @@
 
 void	ft_elstdel(t_env_list *lst)
 {
+	t_env_list *tmp;
+
 	while (lst)
 	{
+		tmp = lst;
 		free(lst->name);
 		free(lst->value);
 		lst = lst->next;
+		free(tmp);
 	}
 }
