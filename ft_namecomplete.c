@@ -14,9 +14,7 @@
 
 char **ft_namecomplete(const char *text, int start, int end)
 {
-	int i;
-
-	i = end;
+	ft_numcount(end);
     rl_attempted_completion_over = 1;
 	rl_completion_append_character = '\0';
 	if (start == 0)

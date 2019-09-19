@@ -23,7 +23,7 @@ void	ft_subbly(t_env_list *env)
 void	ft_subfunc(t_env_list *env)
 {
 	ft_setenv(env, "OLDPWD", ft_getenv("PWD", env), 1);
-	chdir(ft_getnev("HOME", env));
+	chdir(ft_getenv("HOME", env));
 	ft_setenv(env, "PWD", ft_getenv("HOME", env), 1);
 }
 
@@ -31,7 +31,7 @@ void	ft_home(t_env_list *env, char **temp, char **destination)
 {
 	ft_join(temp, ft_getenv("HOME", env));
 	ft_join(temp, "/");
-	ft_join(temp, destination + 2);
+	ft_join(temp, *destination + 2);
 	destination = temp;
 }
 
@@ -56,7 +56,7 @@ void	ft_homer(t_env_list *env, char *temp)
 
 void	ft_cd(char *destination, t_env_list *env)
 {
-	char buf[PATH_MAX + 1];
+	//char buf[PATH_MAX + 1];
 	char *temp;
 
 	temp = NULL;

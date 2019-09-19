@@ -10,8 +10,10 @@ void ft_kill()
 		kill(childpid, SIGKILL);
 		childpid = 0;
 	}
-	ft_putstr("\b");
+	rl_delete_text(0, rl_end);
 	ft_putchar('\n');
+	rl_point = 0;
+	rl_forced_update_display ();
 }
 
 void ft_error(char *arg)
@@ -83,7 +85,7 @@ int main()
 	t_args_2d *tmp;
 
 	rl_attempted_completion_function = ft_namecomplete;
-	signal(SIGINT, ft_kill);
+	signal(2, ft_kill);
 	input_2d = NULL;
 	env = ft_splitenv(environ);
 	ft_intro();

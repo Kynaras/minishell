@@ -15,9 +15,6 @@
 
 char	**ft_pathget(t_env_list *env)
 {
-	int				i;
-
-	i = 0;
 	while (env)
 	{
 		if (!ft_strcmpalpha(env->name, "PATH"))
