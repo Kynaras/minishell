@@ -19,6 +19,7 @@ char **ft_megarray(char **array)
 	char **megarray;
 	int i = -1;
 	int str = 0;
+
 	while (array[++i])
 	{
 		if ((dr = opendir(array[i])))

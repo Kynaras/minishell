@@ -25,7 +25,7 @@ char	**ft_pathget(t_env_list *env)
 		env = env->next;
 	}
 	if (env)
-		return (ft_strsplit(env->value, ';'));
+		return (ft_strsplit(env->value, ':'));
 	else
 		return (NULL);
 }

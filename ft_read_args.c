@@ -24,7 +24,7 @@ char *ft_read_dquote(char *tmp, int count)
 	int i;
 	i = 0;
 
-	ft_join(&tmp, (buffer = readline("dquote> ")));
+	ft_join(&tmp, readline("dquote> "));
 	count = 0;
 	while (tmp[i])
 	{

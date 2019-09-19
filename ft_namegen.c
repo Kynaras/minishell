@@ -22,9 +22,9 @@ char *ft_namegen(const char *text, int state)
 	static char **array;
 
 	
-
-    if (!state) {
-        i = -1;
+    if (!state)
+	{
+		i = -1;
         len = strlen(text);
 		array = ft_megarray(ft_pathget(env));
     }

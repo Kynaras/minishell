@@ -53,7 +53,6 @@ void	ft_cd(char *destination, t_env_list *env)
 		ft_finderror(destination);
 	else
 	{
-		ft_putstr("HERE");
 		ft_setenv(env, "OLDPWD", ft_getenv("PWD", env), 1);
 		ft_setenv(env, "PWD", getcwd(buf, PATH_MAX), 1);
 	}
