@@ -52,16 +52,19 @@ int	ft_permcheck(char *path)
 	if (ft_strlen(path) > PATH_MAX)
 		return (0);
 	else if ((path2 = ft_namecheck(path)))
+	{
+		free(path2);
 		return (0);
-	path2 = ft_strdup(path);
+	}
+	// path2 = ft_strdup(path);
 	lstat(path, &sb);
 	if (S_ISREG(sb.st_mode))
 		return (0);
 	if (access(path, F_OK) < 0)
 	{
-		return (ft_subbercheck(path, path2, count, &sb));
+		return (ft_subbercheck(path, path, count, &sb));
 	}
-	if (access(path2, X_OK) < 0)
+	if (access(path, X_OK) < 0)
 		return (-1);
 	return (0);
 }

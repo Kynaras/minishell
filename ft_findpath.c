@@ -20,13 +20,16 @@ char	*ft_subjoin(char *exepath, char *path, char *arg, char **array)
 	ft_join(&exepath, "/");
 	ft_join(&exepath, arg);
 	if (lstat(exepath, &sb) != -1)
+	{
 		if (ft_permcheck(exepath) == -1)
 		{
 			ft_putstr("minishell: Permission Denied: ");
 			ft_putendl(exepath);
 			free(exepath);
+			ft_freearray(array);
 			return (NULL);
 		}
+	}
 	ft_freearray(array);
 	return (exepath);
 }
@@ -57,5 +60,6 @@ char	*ft_findpath(char *arg, t_env_list *env)
 	}
 	ft_putstr("minishell: command not found :");
 	ft_putendl(arg);
+	ft_freearray(vars.path);
 	return (NULL);
 }
