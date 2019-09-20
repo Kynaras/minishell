@@ -28,7 +28,6 @@ SRC =	minishell.c \
 		ft_freearray.c \
 		ft_permcheck.c \
 		ft_unsetenv.c \
-		ft_errorfind.c \
 		ft_namecheck.c \
 		ft_slashcount.c \
 		ft_finderror.c \
@@ -40,7 +39,7 @@ SRC =	minishell.c \
 		ft_namegen.c \
 		ft_pathget.c \
 
-FLAGS = -g -Wall -Wextra -Werror
+FLAGS =  -g -Wall -Wextra -Werror
 all: $(NAME)
 
 $(NAME): $(SRC) $(HEADER)
