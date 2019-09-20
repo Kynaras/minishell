@@ -56,7 +56,6 @@ void	ft_homer(t_env_list *env, char *temp)
 
 void	ft_cd(char *destination, t_env_list *env)
 {
-	//char buf[PATH_MAX + 1];
 	char *temp;
 
 	temp = NULL;

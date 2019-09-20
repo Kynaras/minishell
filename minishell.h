@@ -14,6 +14,8 @@
 #	include <sys/types.h>
 #	include <sys/wait.h>
 #	include <signal.h>
+#   include <editline/readline.h>
+#	include <histedit.h>
 
 # define BUFF_SIZE 2048
 
@@ -46,6 +48,12 @@ typedef struct s_v_list
 	char			**path;
 	char			*exepath;
 }				t_v_list;
+
+typedef struct s_n_list
+{
+	t_env_list *env;
+	char *name;
+}				t_n_list;
 
 int			ft_read_args(t_args_2d **input_2d, int count);
 void		ft_arg_split(t_args_2d **input, char **colon);
