@@ -13,6 +13,7 @@
 #include "minishell.h"
 #include "libft/libft.h"
 
+char *name;
 pid_t g_childpid;
 
 void	ft_error(char *arg)
@@ -36,7 +37,7 @@ void	ft_execve(char **arg, t_args_2d **input_2d, t_env_list **env)
 		else
 			execve(*arg, ft_t_lst_array((*input_2d)->node), ft_lstarray(*env));
 	}
-	else if (ft_findpath((*input_2d)->node->argument, *env) != NULL)
+	else if ((name = ft_findpath((*input_2d)->node->argument, *env)) != NULL)
 	{
 		if ((pid = fork()) != 0)
 		{
@@ -44,9 +45,10 @@ void	ft_execve(char **arg, t_args_2d **input_2d, t_env_list **env)
 			wait(NULL);
 		}
 		else
-			execve(ft_findpath((*input_2d)->node->argument, *env),
-		ft_t_lst_array((*input_2d)->node), ft_lstarray(*env));
+			execve(name, ft_t_lst_array((*input_2d)->node), ft_lstarray(*env));
 	}
+	if (name)
+		free(name);
 }
 
 void	ft_minishell_mand(t_env_list **env, t_args_2d **input_2d, char **arg)
