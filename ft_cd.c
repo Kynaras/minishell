@@ -57,7 +57,7 @@ void	ft_homer(t_env_list *env, char *temp)
 void	ft_cd(char *destination, t_env_list *env)
 {
 	char *temp;
-
+	
 	temp = NULL;
 	if (!destination)
 	{
@@ -72,6 +72,8 @@ void	ft_cd(char *destination, t_env_list *env)
 	if (destination[0] == '~' && destination[1] == '/'
 	&& destination[2] != '\0')
 		ft_home(env, &temp, &destination);
+	else if (destination[0] == '~' && destination[1] == '\0')
+		destination = ft_getenv("HOME", env);
 	if (chdir(destination) < 0)
 		ft_finderror(destination);
 	else
