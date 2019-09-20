@@ -55,6 +55,7 @@ typedef struct s_n_list
 	char *name;
 }				t_n_list;
 
+void	ft_t_args_free(t_args **head);
 int			ft_read_args(t_args_2d **input_2d, int count);
 void		ft_arg_split(t_args_2d **input, char **colon);
 void		ft_cd(char *destination, t_env_list *env);

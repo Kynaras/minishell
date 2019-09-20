@@ -38,6 +38,7 @@ SRC =	minishell.c \
 		ft_mergarray.c \
 		ft_namegen.c \
 		ft_pathget.c \
+		ft_t_args_free.c \
 
 FLAGS =  -g -Wall -Wextra -Werror
 all: $(NAME)

@@ -22,10 +22,7 @@ void	ft_suby(t_args *input, t_env_list *lst)
 				ft_putstr(ft_getenv(input->argument + 1, lst));
 		}
 		else
-		{
 			ft_putstr(input->argument);
-			free(input->argument);
-		}
 		if (input->next != NULL)
 		{
 			ft_putchar(' ');

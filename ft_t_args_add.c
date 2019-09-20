@@ -5,7 +5,7 @@ void	ft_t_args_add(t_args **lst, t_args *new)
 	t_args *ptr;
 
 	ptr = NULL;
-	if(lst)
+	if (lst)
 		ptr = *lst;
 	if (ptr)
 	{

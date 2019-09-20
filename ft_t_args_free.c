@@ -19,7 +19,7 @@ void	ft_t_args_free(t_args **head)
 	while (*head)
 	{
 		tmp = *head;
-		ft_strdel((*head)->argument);
+		ft_strdel(&(*head)->argument);
 		*head = (*head)->next;
 		free(tmp);
 	}
