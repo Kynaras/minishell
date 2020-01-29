@@ -40,8 +40,8 @@ void ft_arg_split(t_args_2d **input, char **colon) //return 2d_node
 				else
 					ft_t_args_add(&(argtmp->node), ft_t_args_new(ft_strsub(colon[x], i, j)));//this will cause leak
 				i = i + j;
-			}
-			i++;
+			} else
+				i++;
 		}
 		x++;
 	}
