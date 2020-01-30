@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_autocomplete.c                                  :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: keverett <marvin@42.fr>                    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/30 12:27:12 by keverett          #+#    #+#             */
-/*   Updated: 2020/01/30 12:34:33 by keverett         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -18,8 +6,8 @@
 #include <dirent.h>
 #include <fcntl.h>
 
-char **character_name_completion(const char *arg, int arg2, int arg3);
-char *character_name_generator(const char *arg, int arg2);
+char **character_name_completion(const char *, int, int);
+char *character_name_generator(const char *, int);
 
 char	**ft_megarray(char **array)
 {

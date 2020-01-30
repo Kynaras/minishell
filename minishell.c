@@ -31,7 +31,7 @@ void	ft_execve(char **arg, t_args_2d **input_2d, t_env_list **env)
 	{
 		if ((pid = fork()) != 0)
 		{
-			childpid = pid;
+			g_childpid = pid;
 			wait(NULL);
 		}
 		else
@@ -41,7 +41,7 @@ void	ft_execve(char **arg, t_args_2d **input_2d, t_env_list **env)
 	{
 		if ((pid = fork()) != 0)
 		{
-			childpid = pid;
+			g_childpid = pid;
 			wait(NULL);
 		}
 		else

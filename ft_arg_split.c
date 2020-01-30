@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_arg_split.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: keverett <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/01/30 12:18:47 by keverett          #+#    #+#             */
+/*   Updated: 2020/01/30 12:18:48 by keverett         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minishell.h"
 
 void ft_arg_split(t_args_2d **input, char **colon) //return 2d_node
@@ -40,10 +52,10 @@ void ft_arg_split(t_args_2d **input, char **colon) //return 2d_node
 				else
 					ft_t_args_add(&(argtmp->node), ft_t_args_new(ft_strsub(colon[x], i, j)));//this will cause leak
 				i = i + j;
-			} else
+			}
+			else 
 				i++;
 		}
 		x++;
 	}
-
 }
