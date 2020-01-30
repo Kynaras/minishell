@@ -13,7 +13,7 @@
 #include "minishell.h"
 #include "libft/libft.h"
 
-char *name;
+char *g_nam;
 pid_t g_childpid;
 
 void	ft_error(char *arg)
@@ -37,7 +37,7 @@ void	ft_execve(char **arg, t_args_2d **input_2d, t_env_list **env)
 		else
 			execve(*arg, ft_t_lst_array((*input_2d)->node), ft_lstarray(*env));
 	}
-	else if ((name = ft_findpath((*input_2d)->node->argument, *env)) != NULL)
+	else if ((g_nam = ft_findpath((*input_2d)->node->argument, *env)) != NULL)
 	{
 		if ((pid = fork()) != 0)
 		{
@@ -45,10 +45,10 @@ void	ft_execve(char **arg, t_args_2d **input_2d, t_env_list **env)
 			wait(NULL);
 		}
 		else
-			execve(name, ft_t_lst_array((*input_2d)->node), ft_lstarray(*env));
+			execve(g_nam, ft_t_lst_array((*input_2d)->node), ft_lstarray(*env));
 	}
-	if (name)
-		free(name);
+	if (g_nam)
+		free(g_nam);
 }
 
 void	ft_minishell_mand(t_env_list **env, t_args_2d **input_2d, char **arg)
@@ -81,7 +81,6 @@ int		ft_main_continue(t_args_2d **input_2d, t_env_list **env, char **arg)
 		ft_t_args_free(&(*input_2d)->node);
 		free(*input_2d);
 		ft_elstdel(*env);
-		sleep (30);
 		return (0);
 	}
 	else
@@ -97,7 +96,7 @@ int		main(void)
 	t_env_list	*env;
 	t_args_2d	*tmp;
 
-	rl_attempted_completion_function = ft_namecomplete;
+	rl_attempted_completion_function = ft_g_namcomplete;
 	input_2d = NULL;
 	env = ft_splitenv(environ);
 	ft_intro();

@@ -18,8 +18,8 @@ t_args	*ft_t_args_new(char *str)
 
 	if (!(new = (t_args *)malloc(sizeof(t_args))))
 		return (NULL);
-	if(str != NULL)
-    	new->argument = str;
+	if (str != NULL)
+		new->argument = str;
 	else
 		new->argument = NULL;
 	new->next = NULL;

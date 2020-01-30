@@ -56,7 +56,6 @@ int	ft_permcheck(char *path)
 		free(path2);
 		return (0);
 	}
-	// path2 = ft_strdup(path);
 	lstat(path, &sb);
 	if (S_ISREG(sb.st_mode))
 		return (0);

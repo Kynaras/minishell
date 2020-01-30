@@ -12,11 +12,11 @@
 
 #include "minishell.h"
 
-char **ft_t_lst_array(t_args *lst)
+char	**ft_t_lst_array(t_args *lst)
 {
-    char		**array;
+	char	**array;
 	t_args	*tmp;
-	size_t		len;
+	size_t	len;
 
 	tmp = lst;
 	len = 0;
@@ -29,9 +29,9 @@ char **ft_t_lst_array(t_args *lst)
 	len = 0;
 	while (lst)
 	{
-        array[len] = ft_strdup(lst->argument);
-        len++;
-        lst = lst->next;
+		array[len] = ft_strdup(lst->argument);
+		len++;
+		lst = lst->next;
 	}
 	array[len] = NULL;
 	return (array);
