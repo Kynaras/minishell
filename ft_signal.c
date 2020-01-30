@@ -18,13 +18,13 @@
 #include <setjmp.h>
 
 pid_t g_childpid;
-char *buf;
-static int i;
-jmp_buf jump;
+char *g_buf;
+static int g_i;
+jmp_buf g_jump;
 
-void ft_kill(int signum)
+void	ft_kill(int signum)
 {
-	i++;
+	g_i++;
 	if (g_childpid != 0 && g_childpid != 1)
 	{
 		kill(g_childpid, SIGTERM);
@@ -32,16 +32,16 @@ void ft_kill(int signum)
 	if (g_childpid == 1)
 	{
 		ft_putendl("Wow");
-		longjmp(jump, 1);
+		longjmp(g_jump, 1);
 		ft_putchar('\n');
 	}
 }
 
-int main()
+int		main()
 {
 	pid_t pid;
 	jmp_buf jump;
-	buf = NULL;
+	g_buf = NULL;
 
 	g_childpid = 1;
 	signal(SIGINT, ft_kill);
@@ -50,14 +50,14 @@ int main()
 LOOP:
 	while (1)
 	{
-		buf = readline("Here we go");
-		if (!buf)
+		g_buf = readline("Here we go");
+		if (!g_buf)
 			break;
 		pid = fork();
 		if (pid != 0)
 		{
 			g_childpid = pid;
-			printf("PID SET == %d\n", childpid);
+			printf("PID SET == %d\n", g_childpid);
 			wait(NULL);
 			ft_putendl("Child dead?");
 		}
