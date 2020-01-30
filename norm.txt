@@ -4,8 +4,6 @@ Norme: ./a.out.dSYM/Contents/Info.plist
 Warning: Not a valid file
 Norme: ./Makefile
 Warning: Not a valid file
-Norme: ./Example
-Warning: Not a valid file
 Norme: ./libft/Makefile
 Warning: Not a valid file
 Norme: ./libft/author
@@ -18,126 +16,20 @@ Norme: ./a.out
 Warning: Not a valid file
 Norme: ./norm.txt
 Warning: Not a valid file
-Norme: ./cp.c
-Error: file must end with a single empty line
-Error: 42 header not at top of the file
-Error (line 4): function ft_findpath has 26 lines
-Error (line 4): declarations in ft_findpath are bad aligned
-Error (line 8, col 5): i is instanciated during declaration
-Error (line 9, col 8): path is instanciated during declaration
-Error (line 10, col 7): exepath is instanciated during declaration
-Error (line 24, col 5): missing space after return
-Error (line 32, col 0): no newline after block
 Norme: ./ft_freearray.c
-Norme: ./ft_t_add.c
-Norme: ./exe.c
-Error: 42 header not at top of the file
-Error (line 3): declarations in main are bad aligned
-Error (line 3): missing void in function main
-Error (line 3): Space before function name
-Error (line 6, col 13): lst is instanciated during declaration
-Error (line 8): 2 instructions
-Error (line 8): missing newline after if
-Error (line 8): bad indentation
-Error (line 8, col 1): missing space after if
-Error (line 11): bad indentation
-Error (line 12): bad indentation
-Error (line 13): spaces at the end of line
 Norme: ./ft_t_vnew.c
-Norme: ./norm.c
-Error: file must end with a single empty line
-Error (line 13): multiple empty lines
-Norme: ./ft_echo.c
-Error (line 15): function ft_echo has 34 lines
-Error (line 21, col 1): missing space after if
-Error (line 29, col 2): missing space after if
-Error (line 30): bad indentation
-Error (line 31): bad indentation
-Error (line 32): bad indentation
-Error (line 33): bad indentation
-Error (line 38): bad indentation
-Error (line 39): bad indentation
-Error (line 40): bad indentation
+Norme: ./ft_t_add.c
 Norme: ./ft_getenv.c
 Norme: ./ft_setenv.c
 Norme: ./ft_t_new.c
-Norme: ./ex.c
-Error: file must end with a single empty line
-Error: 42 header not at top of the file
-Error (line 9): declarations in main are bad aligned
-Error (line 9): declarations must be followed by one empty line in main
-Error (line 9): Space before function name
-Error (line 14, col 13): lst is instanciated during declaration
-Error (line 20): comment not well formatted
-Error (line 20): comment not well placed
-Error (line 20): line has 140 characters
-Error (line 21): comment not well formatted
-Error (line 21): comment not well placed
-Error (line 21): line has 114 characters
-Error (line 22): comment not well formatted
-Error (line 22): missing newline after if
-Error (line 22): comment not well placed
-Error (line 22): line has 113 characters
-Error (line 24): comment not well formatted
-Error (line 24): comment not well placed
-Error (line 24): line has 141 characters
-Error (line 25): comment not well formatted
-Error (line 25): comment not well placed
-Error (line 25): line has 132 characters
-Error (line 28): comment not well formatted
-Error (line 28): comment not well placed
-Error (line 28): line has 139 characters
-Error (line 30): spaces at the end of line
-Error (line 31, col 0): no newline after block
+Norme: ./ft_echo.c
 Norme: ./libft/ft_strncat.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_strncat
 Norme: ./libft/ft_strnstr.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_strnstr
-Error (line 26): line has 82 characters
-Norme: ./libft/ft_lstadd.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_lstadd
 Norme: ./ft_findpath.c
-Norme: ./ft_permcheck.c
+Error (line 37): function ft_findpath has 26 lines
 Norme: ./libft/ft_isdigit.c
+Norme: ./ft_permcheck.c
+Norme: ./ft_arg_split.c
 Error: WeThinkCode_ header must be followed by one empty line
 Error (line 1): line has 82 characters
 Error (line 2): line has 82 characters
@@ -150,1628 +42,173 @@ Error (line 8): line has 82 characters
 Error (line 9): line has 82 characters
 Error (line 10): line has 82 characters
 Error (line 11): line has 82 characters
-Error (line 13): bad spacing before ft_isdigit
+Error (line 13): preprocessor block must be followed by one empty line
+Error (line 15): function ft_arg_split has 44 lines
+Error (line 15): declarations in ft_arg_split are bad aligned
+Error (line 15): bad spacing before ft_arg_split
+Error (line 15): declarations must be followed by one empty line in ft_arg_split
+Error (line 15): C++ comment
+Error (line 24): missing newline after if
+Error (line 24): C++ comment
+Error (line 24): line has 114 characters
+Error (line 32): line has 91 characters
+Error (line 37): line has 82 characters
+Error (line 40): C++ comment
+Error (line 40): line has 101 characters
+Error (line 42): C++ comment
+Error (line 42): line has 118 characters
+Error (line 51): C++ comment
+Error (line 51): line has 101 characters
+Error (line 53): C++ comment
+Error (line 53): line has 118 characters
+Norme: ./libft/ft_lstadd.c
 Norme: ./libft/ft_putstr_fd.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_putstr_fd
 Norme: ./libft/ft_strequ.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_strequ
 Norme: ./libft/ft_chrlen.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_chrlen
 Norme: ./libft/ft_strlen.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_strlen
-Norme: ./libft/ft_lstnew.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_lstnew
-Norme: ./libft/ft_putnbr.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_putnbr
-Norme: ./libft/ft_memcmp.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_memcmp
 Norme: ./libft/ft_strcmpalpha.c
+Norme: ./libft/ft_lstnew.c
+Norme: ./libft/ft_memcmp.c
+Norme: ./libft/ft_putnbr.c
 Norme: ./libft/ft_strclr.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_strclr
 Norme: ./libft/ft_lstiter.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_lstiter
 Norme: ./libft/ft_putnbr_fd.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_putnbr_fd
-Norme: ./libft/ft_strchr.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_strchr
 Norme: ./libft/ft_striteri.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_striteri
 Norme: ./libft/ft_bzero.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_bzero
 Norme: ./libft/ft_lstaddre.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_lstaddre
+Norme: ./libft/ft_strchr.c
 Norme: ./libft/ft_strjoin.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_strjoin
-Error (line 25): line has 82 characters
 Norme: ./libft/ft_memcpy.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_memcpy
 Norme: ./libft/ft_strsplit.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before st_count
-Error (line 15): bad spacing after st_count
-Error (line 38): bad spacing before st_findstring
-Error (line 38): bad spacing after st_findstring
-Error (line 63): bad spacing before st_strlen
-Error (line 63): bad spacing after st_strlen
-Error (line 77): bad spacing before st_alloc
-Error (line 77): bad spacing after st_alloc
-Error (line 92): bad spacing before ft_strsplit
 Norme: ./libft/ft_strstr.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_strstr
 Norme: ./libft/ft_isascii.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): bad spacing before ft_isascii
-Norme: ./libft/ft_putendl.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_putendl
 Norme: ./libft/ft_memalloc.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_memalloc
+Norme: ./libft/ft_putendl.c
 Norme: ./libft/ft_strcat.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_strcat
 Norme: ./libft/ft_memccpy.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_memccpy
-Norme: ./libft/ft_putendl_fd.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_putendl_fd
-Norme: ./libft/ft_strdel.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_strdel
 Norme: ./libft/libft.h
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 14): preprocessor block must be followed by one empty line
-Error (line 21): preprocessor block must be followed by one empty line
 Norme: ./libft/ft_isprint.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): bad spacing before ft_isprint
+Norme: ./libft/ft_putendl_fd.c
+Norme: ./libft/ft_strdel.c
 Norme: ./libft/ft_strnequ.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_strnequ
-Norme: ./libft/ft_lstmap.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_lstaddr
-Error (line 15): bad spacing after ft_lstaddr
-Error (line 25): bad spacing before ft_lstmap
 Norme: ./libft/ft_toupper.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): bad spacing before ft_toupper
+Norme: ./libft/ft_lstmap.c
 Norme: ./libft/ft_putchar.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_putchar
 Norme: ./libft/ft_strrchr.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_strrchr
 Norme: ./libft/ft_isalpha.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): bad spacing before ft_isalpha
 Norme: ./libft/ft_memchr.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_memchr
 Norme: ./libft/ft_strmap.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_strmap
 Norme: ./libft/ft_putchar_fd.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_putchar_fd
 Norme: ./libft/ft_memset.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_memset
 Norme: ./libft/ft_lstdel.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_lstdel
-Norme: ./libft/get_next_line.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 14): preprocessor block must be followed by one empty line
-Error (line 16): bad spacing before ft_lstad
-Error (line 16): bad spacing after ft_lstad
-Error (line 23): line has 100 characters
-Error (line 41): bad spacing before ft_lstmake
-Error (line 41): bad spacing after ft_lstmake
-Error (line 68): bad spacing before ft_ebuf
-Error (line 68): bad spacing after ft_ebuf
-Error (line 97): bad spacing before ft_loop
-Error (line 97): bad spacing after ft_loop
-Error (line 124): bad spacing before get_next_line
 Norme: ./libft/ft_strncmp.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_strncmp
-Norme: ./libft/ft_strclen.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_strclen
-Norme: ./libft/ft_putlonglong.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_putlonglong
 Norme: ./libft/ft_strcpy.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_strcpy
-Norme: ./libft/ft_strcdup.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_strcdup
+Norme: ./libft/ft_putlonglong.c
+Norme: ./libft/get_next_line.c
+Error (line 23): line has 99 characters
 Norme: ./libft/ft_strmapi.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_strmapi
+Norme: ./libft/ft_strclen.c
 Norme: ./libft/ft_memdel.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_memdel
-Norme: ./libft/ft_putstr.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_putstr
+Norme: ./libft/ft_strcdup.c
 Norme: ./libft/ft_strnew.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_strnew
 Norme: ./libft/ft_memmove.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_memmove
-Norme: ./libft/ft_strtrim.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before st_string
-Error (line 15): bad spacing after st_string
-Error (line 26): bad spacing before st_stringn
-Error (line 26): bad spacing after st_stringn
-Error (line 37): bad spacing before ft_strtrim
-Norme: ./libft/ft_iswhitespace.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): bad spacing before ft_iswhitespace
-Norme: ./libft/ft_cut.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_cut
+Norme: ./libft/ft_putstr.c
 Norme: ./libft/ft_strlcat.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_strlcat
 Norme: ./libft/ft_strdup.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_strdup
+Norme: ./libft/ft_strtrim.c
+Norme: ./libft/ft_cut.c
+Norme: ./libft/ft_iswhitespace.c
 Norme: ./libft/ft_isalnum.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): bad spacing before ft_isalnum
-Norme: ./libft/ft_atoi.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): bad spacing before ft_atoi
 Norme: ./libft/ft_lstdelone.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_lstdelone
 Norme: ./libft/ft_numcount.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_numcount
-Norme: ./libft/ft_join.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_join
+Norme: ./libft/ft_atoi.c
 Norme: ./libft/ft_striter.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_striter
+Norme: ./libft/ft_join.c
 Norme: ./libft/ft_strsub.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_strsub
-Norme: ./libft/ft_tolower.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): bad spacing before ft_tolower
-Norme: ./libft/ft_strncpy.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_strncpy
 Norme: ./libft/ft_itoa.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before st_malloc
-Error (line 15): bad spacing after st_malloc
-Error (line 35): bad spacing before st_string
-Error (line 35): bad spacing after st_string
-Error (line 57): bad spacing before ft_itoa
+Norme: ./libft/ft_strncpy.c
+Norme: ./libft/ft_tolower.c
 Norme: ./libft/ft_strcmp.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_strcmp
 Norme: ./ft_t_lst_array.c
-Error: file must end with a single empty line
-Error: 42 header not at top of the file
-Error (line 3): declarations in ft_t_lst_array are bad aligned
-Error (line 3): Space before function name
-Error (line 5): must begin only by tabulations
-Error (line 5): bad indentation
-Error (line 20): must begin only by tabulations
-Error (line 20): bad indentation
-Error (line 21): must begin only by tabulations
-Error (line 21): bad indentation
-Error (line 22): must begin only by tabulations
-Error (line 22): bad indentation
-Error (line 26, col 0): no newline after block
+Norme: ./ft_time.c
+Norme: ./ft_namegen.c
 Norme: ./minishell.h
 Error: global scope bad aligned
-Error: 42 header not at top of the file
-Error (line 1): preprocessor block must be followed by one empty line
-Error (line 4): wrong number of spaces in preprocessor indentation
-Error (line 5): wrong number of spaces in preprocessor indentation
-Error (line 6): wrong number of spaces in preprocessor indentation
-Error (line 7): wrong number of spaces in preprocessor indentation
-Error (line 8): wrong number of spaces in preprocessor indentation
-Error (line 9): wrong number of spaces in preprocessor indentation
-Error (line 10): wrong number of spaces in preprocessor indentation
-Error (line 11): wrong number of spaces in preprocessor indentation
-Error (line 12): wrong number of spaces in preprocessor indentation
-Error (line 13): wrong number of spaces in preprocessor indentation
-Error (line 14): wrong number of spaces in preprocessor indentation
-Error (line 15): preprocessor block must be followed by one empty line
-Error (line 15): wrong number of spaces in preprocessor indentation
-Error (line 17): preprocessor block must be followed by one empty line
-Error (line 25): Struct s_args_2d bad aligned
-Error (line 25): s_args_2d and t_args_2d not aligned.
-Error (line 25): must have only tabulations between struct and s_args_2d.
-Error (line 27): struct and s_args not separated by a single space.
-Error (line 27, col 7): bad spacing
-Error (line 31): Struct s_e_list bad aligned
-Error (line 31): must have only tabulations between struct and s_e_list.
-Error (line 33): must begin only by tabulations
-Error (line 33): bad indentation
-Error (line 34): must begin only by tabulations
-Error (line 34): bad indentation
-Error (line 35): must begin only by tabulations
-Error (line 35): bad indentation
-Error (line 36, col 1): bad spacing
-Error (line 38): s_v_list and t_v_list not aligned.
-Error (line 38): must have only tabulations between struct and s_v_list.
-Error (line 53, col 3): bad spacing
-Error (line 54, col 10): bad spacing
-Error (line 56): line has 82 characters
-Error (line 56, col 4): bad spacing
-Norme: ./ft_time.c
-Norme: ./auto.c
-Error: global scope bad aligned
-Error: 42 header not at top of the file
-Error (line 6): line has 95 characters
-Error (line 6, col 12): global named words is not well prefixed
-Error (line 8): declarations must be followed by one empty line in xmalloc
-Error (line 8): Space before function name
-Error (line 8): Spacing after function name
-Error (line 10): must begin only by tabulations
-Error (line 10): bad indentation
-Error (line 11): must begin only by tabulations
-Error (line 11): bad indentation
-Error (line 11, col 17): Spacing after call to malloc
-Error (line 12): must begin only by tabulations
-Error (line 12): bad indentation
-Error (line 13): must begin only by tabulations
-Error (line 13): bad indentation
-Error (line 14): must begin only by tabulations
-Error (line 14): bad indentation
-Error (line 14, col 16): Spacing after call to fprintf
-Error (line 15): must begin only by tabulations
-Error (line 15): bad indentation
-Error (line 15, col 13): Spacing after call to exit
-Error (line 16): must begin only by tabulations
-Error (line 16): bad indentation
-Error (line 17): must begin only by tabulations
-Error (line 17): bad indentation
-Error (line 17, col 11): missing parentheses in return statement
-Error (line 20): declarations must be followed by one empty line in dupstr
-Error (line 20): Space before function name
-Error (line 20): Spacing after function name
-Error (line 22): must begin only by tabulations
-Error (line 22): bad indentation
-Error (line 23): must begin only by tabulations
-Error (line 23): bad indentation
-Error (line 23, col 18): space after cast
-Error (line 23, col 28): Spacing after call to xmalloc
-Error (line 23, col 36): Spacing after call to strlen
-Error (line 24): must begin only by tabulations
-Error (line 24): bad indentation
-Error (line 24, col 11): Spacing after call to strcpy
-Error (line 25): must begin only by tabulations
-Error (line 25): bad indentation
-Error (line 28): Space before function name
-Error (line 28): Spacing after function name
-Error (line 30): must begin only by tabulations
-Error (line 30): multiple declarations
-Error (line 30): bad indentation
-Error (line 31): must begin only by tabulations
-Error (line 31): bad indentation
-Error (line 33): must begin only by tabulations
-Error (line 33): bad indentation
-Error (line 34): must begin only by tabulations
-Error (line 34): bad indentation
-Error (line 35): must begin only by tabulations
-Error (line 35): bad indentation
-Error (line 36): must begin only by tabulations
-Error (line 36): bad indentation
-Error (line 36, col 21): Spacing after call to strlen
-Error (line 37): must begin only by tabulations
-Error (line 37): bad indentation
-Error (line 38): Empty line
-Error (line 39): must begin only by tabulations
-Error (line 39): bad indentation
-Error (line 40): must begin only by tabulations
-Error (line 40): bad indentation
-Error (line 41): must begin only by tabulations
-Error (line 41): bad indentation
-Error (line 42): must begin only by tabulations
-Error (line 42): 2 instructions
-Error (line 42): missing newline after if
-Error (line 42): bad indentation
-Error (line 42, col 53): missing parentheses in return statement
-Error (line 42, col 60): Spacing after call to dupstr
-Error (line 43): must begin only by tabulations
-Error (line 43): bad indentation
-Error (line 44): Empty line
-Error (line 45): must begin only by tabulations
-Error (line 45): C++ comment
-Error (line 45): bad indentation
-Error (line 46): must begin only by tabulations
-Error (line 46): bad indentation
-Error (line 46, col 19): space after cast
-Error (line 49): declarations must be followed by one empty line in my_completion
-Error (line 49): Space before function name
-Error (line 49): Spacing after function name
+Error (line 16): wrong number of spaces in preprocessor indentation
+Error (line 17): wrong number of spaces in preprocessor indentation
+Error (line 18): wrong number of spaces in preprocessor indentation
+Error (line 19): wrong number of spaces in preprocessor indentation
+Error (line 20): wrong number of spaces in preprocessor indentation
+Error (line 21): wrong number of spaces in preprocessor indentation
+Error (line 22): wrong number of spaces in preprocessor indentation
+Error (line 23): wrong number of spaces in preprocessor indentation
+Error (line 24): wrong number of spaces in preprocessor indentation
+Error (line 25): wrong number of spaces in preprocessor indentation
+Error (line 26): wrong number of spaces in preprocessor indentation
+Error (line 27): wrong number of spaces in preprocessor indentation
+Error (line 28): wrong number of spaces in preprocessor indentation
+Error (line 29): wrong number of spaces in preprocessor indentation
+Error (line 30): wrong number of spaces in preprocessor indentation
+Error (line 42): Struct s_args_2d bad aligned
+Error (line 42): s_args_2d and t_args_2d not aligned.
+Error (line 42): must have only tabulations between struct and s_args_2d.
+Error (line 44): struct and s_args not separated by a single space.
+Error (line 44, col 7): bad spacing
+Error (line 48): Struct s_e_list bad aligned
+Error (line 48): must have only tabulations between struct and s_e_list.
+Error (line 50): must begin only by tabulations
+Error (line 50): bad indentation
 Error (line 51): must begin only by tabulations
 Error (line 51): bad indentation
-Error (line 51, col 11): matches is instanciated during declaration
-Error (line 51, col 29): space after cast
 Error (line 52): must begin only by tabulations
 Error (line 52): bad indentation
-Error (line 53): must begin only by tabulations
-Error (line 53): bad indentation
-Error (line 54): must begin only by tabulations
-Error (line 54): bad indentation
-Error (line 54, col 40): Spacing after call to rl_completion_matches
-Error (line 54, col 48): space after cast
-Error (line 55): must begin only by tabulations
-Error (line 55): bad indentation
-Error (line 56): must begin only by tabulations
-Error (line 56): bad indentation
-Error (line 56, col 21): Spacing after call to rl_bind_key
-Error (line 57): must begin only by tabulations
-Error (line 57): bad indentation
-Error (line 57, col 11): missing parentheses in return statement
-Error (line 60): declarations must be followed by one empty line in main
-Error (line 60): Space before function name
-Error (line 60): Spacing after function name
-Error (line 62): must begin only by tabulations
-Error (line 62): bad indentation
-Error (line 63): must begin only by tabulations
-Error (line 63): bad indentation
-Error (line 64): Empty line
-Error (line 65): must begin only by tabulations
-Error (line 65): bad indentation
-Error (line 66): must begin only by tabulations
-Error (line 66): bad indentation
-Error (line 67): must begin only by tabulations
-Error (line 67): bad indentation
-Error (line 67, col 20): Spacing after call to rl_bind_key
-Error (line 68): Empty line
-Error (line 69): must begin only by tabulations
-Error (line 69): 2 instructions
-Error (line 69): missing newline after if
-Error (line 69): bad indentation
-Error (line 69, col 19): Spacing after call to strcmp
-Error (line 69, col 39): missing space after break
-Error (line 70): must begin only by tabulations
-Error (line 70): C++ comment
-Error (line 70): bad indentation
-Error (line 71): must begin only by tabulations
-Error (line 71): C++ comment
-Error (line 71): bad indentation
-Error (line 72): must begin only by tabulations
-Error (line 72): C++ comment
-Error (line 72): bad indentation
-Error (line 73): must begin only by tabulations
-Error (line 73): C++ comment
-Error (line 73): bad indentation
-Error (line 74): must begin only by tabulations
-Error (line 74): C++ comment
-Error (line 74): bad indentation
-Error (line 75): must begin only by tabulations
-Error (line 75): C++ comment
-Error (line 75): bad indentation
-Error (line 76): must begin only by tabulations
-Error (line 76): bad indentation
-Error (line 77): must begin only by tabulations
-Error (line 77): bad indentation
-Error (line 77, col 9): Spacing after call to free
-Error (line 78): Empty line
-Error (line 79): must begin only by tabulations
-Error (line 79): bad indentation
-Error (line 79, col 11): missing parentheses in return statement
+Error (line 53, col 1): bad spacing
+Error (line 55): s_v_list and t_v_list not aligned.
+Error (line 55): must have only tabulations between struct and s_v_list.
+Error (line 64): Struct s_n_list bad aligned
+Error (line 64): s_n_list and t_n_list not aligned.
+Error (line 64): must have only tabulations between struct and s_n_list.
+Error (line 79, col 3): bad spacing
+Error (line 80, col 10): bad spacing
+Error (line 82, col 4): bad spacing
+Error (line 101): parameter 1 of ft_namecomplete is unnamed
+Error (line 101): parameter 2 of ft_namecomplete is unnamed
+Error (line 101): parameter 3 of ft_namecomplete is unnamed
+Error (line 102): parameter 1 of ft_namegen is unnamed
+Error (line 102): parameter 2 of ft_namegen is unnamed
+Error (line 103, col 4): bad spacing
 Norme: ./ft_unsetenv.c
-Norme: ./main.c
-Error: file must end with a single empty line
-Error: 42 header not at top of the file
-Error (line 3): missing void in function main
-Error (line 3): Space before function name
-Norme: ./tester.c
-Error: file must end with a single empty line
-Error: 42 header not at top of the file
-Error (line 1): preprocessor block must be followed by one empty line
-Error (line 3): declarations in main are bad aligned
-Error (line 3): bad spacing before main
-Error (line 3): missing void in function main
-Error (line 3): Space before function name
-Error (line 6, col 13): lst is instanciated during declaration
-Error (line 7, col 7): path is instanciated during declaration
-Error (line 13, col 0): no newline after block
-Norme: ./ft_cd.c
-Error (line 15): function ft_cd has 36 lines
+Norme: ./ft_read_args.c
 Norme: ./ft_t_args_2d_add.c
-Error: file must end with a single empty line
-Error: 42 header not at top of the file
-Error (line 15, col 0): no newline after block
-Norme: ./ft_errorfind.c
-Error (line 15): function ft_errorfind has 71 lines
-Error (line 15): declarations in ft_errorfind are bad aligned
-Error (line 15): Space before function name
-Error (line 37): Empty line
-Error (line 57, col 4): missing space after break
 Norme: ./ft_pathget.c
-Norme: ./ft_namecheck.c
-Norme: ./ft_signal.c
-Error: global scope bad aligned
-Error: file must end with a single empty line
-Error: 42 header not at top of the file
-Error (line 6, col 6): global named childpid is not well prefixed
-Error (line 8): Space before function name
-Error (line 8): Space before function name
-Error (line 8): Space before function name
-Error (line 8): Space before function name
-Error (line 8, col 4): bad spacing
-Error (line 10): must begin only by tabulations
-Error (line 10): bad indentation
-Error (line 13): missing void in function main
-Error (line 13): declarations in main must be at the top of the function
-Error (line 13): declarations must be followed by one empty line in main
-Error (line 13): Space before function name
-Error (line 15): must begin only by tabulations
-Error (line 15): bad indentation
-Error (line 17): must begin only by tabulations
-Error (line 17): bad indentation
-Error (line 18): must begin only by tabulations
-Error (line 18): bad indentation
-Error (line 19): must begin only by tabulations
-Error (line 19): bad indentation
-Error (line 20): must begin only by tabulations
-Error (line 20): bad indentation
-Error (line 21): must begin only by tabulations
-Error (line 21): bad indentation
-Error (line 22): must begin only by tabulations
-Error (line 22): bad indentation
-Error (line 23): must begin only by tabulations
-Error (line 23): bad indentation
-Error (line 24): must begin only by tabulations
-Error (line 24): bad indentation
-Error (line 25): must begin only by tabulations
-Error (line 25): bad indentation
-Error (line 26): must begin only by tabulations
-Error (line 26): bad indentation
-Error (line 27): must begin only by tabulations
-Error (line 27): bad indentation
-Error (line 28): must begin only by tabulations
-Error (line 28): bad indentation
-Error (line 29): must begin only by tabulations
-Error (line 29): bad indentation
-Error (line 30): must begin only by tabulations
-Error (line 30): bad indentation
-Error (line 31): must begin only by tabulations
-Error (line 31): bad indentation
-Error (line 32): must begin only by tabulations
-Error (line 32): bad indentation
-Error (line 33): must begin only by tabulations
-Error (line 33): bad indentation
-Error (line 34): must begin only by tabulations
-Error (line 34): bad indentation
-Error (line 35): must begin only by tabulations
-Error (line 35): bad indentation
-Error (line 36): must begin only by tabulations
-Error (line 36): bad indentation
-Error (line 37): must begin only by tabulations
-Error (line 37): spaces at the end of line
-Error (line 37): bad indentation
-Error (line 38): Empty line
-Error (line 39, col 0): no empty line before block
-Error (line 39, col 0): no newline after block
 Norme: ./ft_env.c
+Norme: ./ft_namecheck.c
+Norme: ./ft_cd.c
 Norme: ./ft_t_args_2d_new.c
-Error: file must end with a single empty line
-Error: 42 header not at top of the file
-Error (line 12, col 0): no newline after block
-Norme: ./cpy.c
-Error: WeThinkCode_ header must be followed by one empty line
-Error (line 1): line has 82 characters
-Error (line 2): line has 82 characters
-Error (line 3): line has 82 characters
-Error (line 4): line has 82 characters
-Error (line 5): line has 82 characters
-Error (line 6): line has 82 characters
-Error (line 7): line has 82 characters
-Error (line 8): line has 82 characters
-Error (line 9): line has 82 characters
-Error (line 10): line has 82 characters
-Error (line 11): line has 82 characters
-Error (line 13): preprocessor block must be followed by one empty line
-Error (line 15): bad spacing before ft_t_add
-Error (line 15): Space before function name
+Norme: ./ft_signal.c
+Error (line 40): function main has 39 lines
+Error (line 40): declarations in main are bad aligned
+Error (line 40): missing void in function main
+Error (line 40): declarations must be followed by one empty line in main
+Error (line 45): Empty line
+Error (line 49): goto detected
+Error (line 50): bad indentation
+Error (line 55, col 3): missing space after break
 Norme: ./ft_toolong.c
+Norme: ./ft_namecomplete.c
 Norme: ./ft_splitenv.c
+Norme: ./ft_megarray_malloc.c
 Norme: ./ft_t_args_new.c
-Error: file must end with a single empty line
-Error: 42 header not at top of the file
-Error (line 9): must begin only by tabulations
-Error (line 9): bad indentation
-Error (line 12, col 0): no newline after block
 Norme: ./file.c
-Error: file must end with a single empty line
-Error: 42 header not at top of the file
-Error (line 3): Space before function name
-Error (line 11, col 0): no newline after block
 Norme: ./ft_slashcount.c
 Norme: ./ft_finderror.c
+Norme: ./ft_t_args_free.c
 Norme: ./ft_intro.c
 Norme: ./ft_arr_len.c
-Error: file must end with a single empty line
-Error: 42 header not at top of the file
-Error (line 3): Space before function name
-Error (line 3): Space before function name
-Error (line 3, col 6): bad spacing
-Error (line 5): must begin only by tabulations
-Error (line 5): bad indentation
-Error (line 7): must begin only by tabulations
-Error (line 7): bad indentation
-Error (line 8): must begin only by tabulations
-Error (line 8): bad indentation
-Error (line 8, col 4): missing space after if
-Error (line 9): must begin only by tabulations
-Error (line 9): bad indentation
-Error (line 10): must begin only by tabulations
-Error (line 10): bad indentation
-Error (line 10, col 8): missing space after while
-Error (line 11): must begin only by tabulations
-Error (line 11): bad indentation
-Error (line 12): must begin only by tabulations
-Error (line 12): bad indentation
-Error (line 13): must begin only by tabulations
-Error (line 13): bad indentation
-Error (line 14, col 0): no newline after block
-Norme: ./testz.c
-Error: file must end with a single empty line
-Error: 42 header not at top of the file
-Error (line 2): must not begin by spaces/tabulations
-Error (line 3): must not begin by spaces/tabulations
-Error (line 4): must not begin by spaces/tabulations
-Error (line 4): preprocessor block must be followed by one empty line
-Error (line 4): C++ comment
-Error (line 5): bad spacing before main
-Error (line 5): declarations must be followed by one empty line in main
-Error (line 5): Space before function name
-Error (line 7): must begin only by tabulations
-Error (line 7): bad indentation
-Error (line 7, col 10): str is instanciated during declaration
-Error (line 8): must begin only by tabulations
-Error (line 8): bad indentation
-Error (line 9): must begin only by tabulations
-Error (line 9): bad indentation
-Error (line 10, col 0): no newline after block
 Norme: ./ft_lstarray.c
-Norme: ./ft_t_args_add.c
-Error: file must end with a single empty line
-Error: 42 header not at top of the file
-Error (line 8, col 1): missing space after if
-Error (line 17, col 0): no newline after block
-Norme: ./test.c
-Error: global scope bad aligned
-Error: file must end with a single empty line
-Error: 42 header not at top of the file
-Error (line 7): preprocessor block must be followed by one empty line
-Error (line 9): parameter 1 of character_name_completion is unnamed
-Error (line 9): parameter 2 of character_name_completion is unnamed
-Error (line 9): parameter 3 of character_name_completion is unnamed
-Error (line 9): declaration of character_name_completion forbidden in .c
-Error (line 10): parameter 1 of character_name_generator is unnamed
-Error (line 10): parameter 2 of character_name_generator is unnamed
-Error (line 10): declaration of character_name_generator forbidden in .c
-Error (line 12, col 6): global named character_names is not well prefixed
-Error (line 13): must begin only by tabulations
-Error (line 13): bad indentation
-Error (line 14): must begin only by tabulations
-Error (line 14): bad indentation
-Error (line 15): must begin only by tabulations
-Error (line 15): bad indentation
-Error (line 16): must begin only by tabulations
-Error (line 16): bad indentation
-Error (line 17): must begin only by tabulations
-Error (line 17): bad indentation
-Error (line 20): function ft_megarray has 32 lines
-Error (line 20): declarations in ft_megarray are bad aligned
-Error (line 20): bad spacing before ft_megarray
-Error (line 20): bad spacing after ft_megarray
-Error (line 20): declarations must be followed by one empty line in ft_megarray
-Error (line 20): Space before function name
-Error (line 25, col 5): i is instanciated during declaration
-Error (line 26, col 5): str is instanciated during declaration
-Error (line 31, col 3): missing space after while
-Error (line 38, col 24): space after sizeof
-Error (line 45, col 3): missing space after while
-Error (line 56): bad spacing before ft_pathget
-Error (line 56): bad spacing after ft_pathget
-Error (line 56): Space before function name
-Error (line 69): bad spacing before main
-Error (line 69): bad spacing after main
-Error (line 70): bad indentation
-Error (line 74): must begin only by tabulations
-Error (line 74): bad indentation
-Error (line 76): must begin only by tabulations
-Error (line 76): bad indentation
-Error (line 77, col 1): missing space after while
-Error (line 79): must begin only by tabulations
-Error (line 79): missing newline after if
-Error (line 79): bad indentation
-Error (line 79, col 16): no newline before block
-Error (line 80): must begin only by tabulations
-Error (line 80): bad indentation
-Error (line 81): must begin only by tabulations
-Error (line 81): bad indentation
-Error (line 83): must begin only by tabulations
-Error (line 83): bad indentation
-Error (line 83, col 11): missing parentheses in return statement
-Error (line 86): bad spacing before character_name_completion
-Error (line 86): bad spacing after character_name_completion
-Error (line 86): Space before function name
-Error (line 87): bad indentation
-Error (line 89): C++ comment
-Error (line 89): bad indentation
-Error (line 90): must begin only by tabulations
-Error (line 90): bad indentation
-Error (line 93): 2 instructions
-Error (line 93, col 9): missing parentheses in return statement
-Error (line 94): bad indentation
-Error (line 97): declarations in character_name_generator are bad aligned
-Error (line 97): bad spacing before character_name_generator
-Error (line 97): declarations must be followed by one empty line in character_name_generator
-Error (line 97): Space before function name
-Error (line 97, col 0): character_name_generator has 7 variables
-Error (line 98): bad indentation
-Error (line 101, col 13): env is instanciated during declaration
-Error (line 102): multiple declarations
-Error (line 103): must begin only by tabulations
-Error (line 103): bad indentation
-Error (line 110): must begin only by tabulations
-Error (line 110): missing newline after if
-Error (line 110): bad indentation
-Error (line 110, col 16): no newline before block
-Error (line 111): must begin only by tabulations
-Error (line 111): bad indentation
-Error (line 112): must begin only by tabulations
-Error (line 112): bad indentation
-Error (line 114): must begin only by tabulations
-Error (line 114): bad indentation
-Error (line 117): bad indentation
-Error (line 118): bad indentation
-Error (line 119): bad indentation
-Error (line 120): bad indentation
-Error (line 121): bad indentation
-Error (line 124, col 0): no newline after block
 Norme: ./ft_elstdel.c
+Norme: ./ft_t_args_add.c
+Norme: ./ft_mergarray.c
 Norme: ./ft_autocomplete.c
-Error: global scope bad aligned
-Error: file must end with a single empty line
-Error: 42 header not at top of the file
-Error (line 7): preprocessor block must be followed by one empty line
-Error (line 9): parameter 1 of character_name_completion is unnamed
-Error (line 9): parameter 2 of character_name_completion is unnamed
-Error (line 9): parameter 3 of character_name_completion is unnamed
-Error (line 9): declaration of character_name_completion forbidden in .c
-Error (line 10): parameter 1 of character_name_generator is unnamed
-Error (line 10): parameter 2 of character_name_generator is unnamed
-Error (line 10): declaration of character_name_generator forbidden in .c
-Error (line 12): function ft_megarray has 32 lines
-Error (line 12): declarations in ft_megarray are bad aligned
-Error (line 12): bad spacing before ft_megarray
-Error (line 12): bad spacing after ft_megarray
-Error (line 12): declarations must be followed by one empty line in ft_megarray
-Error (line 12): Space before function name
-Error (line 17, col 5): i is instanciated during declaration
-Error (line 18, col 5): str is instanciated during declaration
-Error (line 23, col 3): missing space after while
-Error (line 30, col 24): space after sizeof
-Error (line 37, col 3): missing space after while
-Error (line 48): bad spacing before ft_pathget
-Error (line 48): bad spacing after ft_pathget
-Error (line 48): Space before function name
-Error (line 61): bad spacing before main
-Error (line 61): bad spacing after main
-Error (line 62): bad indentation
-Error (line 66): must begin only by tabulations
-Error (line 66): bad indentation
-Error (line 68): must begin only by tabulations
-Error (line 68): bad indentation
-Error (line 69, col 1): missing space after while
-Error (line 71): must begin only by tabulations
-Error (line 71): missing newline after if
-Error (line 71): bad indentation
-Error (line 71, col 16): no newline before block
-Error (line 72): must begin only by tabulations
-Error (line 72): bad indentation
-Error (line 73): must begin only by tabulations
-Error (line 73): bad indentation
-Error (line 75): must begin only by tabulations
-Error (line 75): bad indentation
-Error (line 75, col 11): missing parentheses in return statement
-Error (line 78): bad spacing before character_name_completion
-Error (line 78): bad spacing after character_name_completion
-Error (line 78): Space before function name
-Error (line 79): bad indentation
-Error (line 81): C++ comment
-Error (line 81): bad indentation
-Error (line 82): must begin only by tabulations
-Error (line 82): bad indentation
-Error (line 85): 2 instructions
-Error (line 85, col 9): missing parentheses in return statement
-Error (line 86): bad indentation
-Error (line 89): declarations in character_name_generator are bad aligned
-Error (line 89): bad spacing before character_name_generator
-Error (line 89): declarations must be followed by one empty line in character_name_generator
-Error (line 89): Space before function name
-Error (line 89, col 0): character_name_generator has 7 variables
-Error (line 90): bad indentation
-Error (line 93, col 13): env is instanciated during declaration
-Error (line 94): multiple declarations
-Error (line 95): must begin only by tabulations
-Error (line 95): bad indentation
-Error (line 102): must begin only by tabulations
-Error (line 102): missing newline after if
-Error (line 102): bad indentation
-Error (line 102, col 16): no newline before block
-Error (line 103): must begin only by tabulations
-Error (line 103): bad indentation
-Error (line 104): must begin only by tabulations
-Error (line 104): bad indentation
-Error (line 106): must begin only by tabulations
-Error (line 106): bad indentation
-Error (line 109): bad indentation
-Error (line 110): bad indentation
-Error (line 111): bad indentation
-Error (line 112): bad indentation
-Error (line 113): bad indentation
-Error (line 116, col 0): no newline after block
 Norme: ./minishell.c
-Error: global scope bad aligned
-Error: file must end with a single empty line
-Error: 42 header not at top of the file
-Error (line 2): preprocessor block must be followed by one empty line
-Error (line 4): function ft_arg_split has 44 lines
-Error (line 4): declarations in ft_arg_split are bad aligned
-Error (line 4): bad spacing before ft_arg_split
-Error (line 4): bad spacing after ft_arg_split
-Error (line 4): declarations must be followed by one empty line in ft_arg_split
-Error (line 4): Space before function name
-Error (line 4): C++ comment
-Error (line 13): line has 91 characters
-Error (line 14): must begin only by tabulations
-Error (line 14): bad indentation
-Error (line 15): must begin only by tabulations
-Error (line 15): bad indentation
-Error (line 18, col 2): missing space after while
-Error (line 21): line has 91 characters
-Error (line 26): line has 82 characters
-Error (line 31): line has 95 characters
-Error (line 42): line has 95 characters
-Error (line 50, col 0): no empty line before block
-Error (line 52): bad spacing before ft_read_quote
-Error (line 52): bad spacing after ft_read_quote
-Error (line 52): declarations must be followed by one empty line in ft_read_quote
-Error (line 52): Space before function name
-Error (line 67, col 8): missing parentheses in return statement
-Error (line 70): bad spacing before ft_read_dquote
-Error (line 70): bad spacing after ft_read_dquote
-Error (line 70): declarations must be followed by one empty line in ft_read_dquote
-Error (line 70): Space before function name
-Error (line 85, col 8): missing parentheses in return statement
-Error (line 88): function ft_read_args has 31 lines
-Error (line 88): declarations in ft_read_args are bad aligned
-Error (line 88): bad spacing before ft_read_args
-Error (line 88): bad spacing after ft_read_args
-Error (line 88): Space before function name
-Error (line 96): C++ comment
-Error (line 97): C++ comment
-Error (line 117, col 2): missing space after if
-Error (line 119): bad indentation
-Error (line 120, col 8): missing parentheses in return statement
-Error (line 123): function main has 66 lines
-Error (line 123): declarations in main are bad aligned
-Error (line 123): bad spacing before main
-Error (line 123): missing void in function main
-Error (line 123): Space before function name
-Error (line 123): C++ comment
-Error (line 123, col 0): main has 6 variables
-Error (line 140): missing newline after if
-Error (line 140): C++ comment
-Error (line 142): line has 208 characters
-Error (line 148): line has 92 characters
-Error (line 152): line has 82 characters
-Error (line 156): line has 131 characters
-Error (line 161): missing newline after if
-Error (line 161): C++ comment
-Error (line 161): line has 177 characters
-Error (line 171): C++ comment
-Error (line 171): line has 122 characters
-Error (line 191, col 0): no newline after block
+Error (line 91): function main has 26 lines
