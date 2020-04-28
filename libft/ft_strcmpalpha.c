@@ -21,6 +21,9 @@ int	ft_strcmpalpha(const char *s1, const char *s2)
 	str1 = (unsigned char *)s1;
 	str2 = (unsigned char *)s2;
 	i = 0;
+
+	// if (ft_strcmp("setenv", s1) == 0)
+	// 	printf("This is s1: %s and this is s2: %s\n", s1, s2);
 	while (str1[i] != '\0')
 	{
 		if (str1[i] >= 'A' && str1[i] <= 'Z')

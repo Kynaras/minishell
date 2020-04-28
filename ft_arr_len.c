@@ -20,7 +20,11 @@ size_t	ft_arr_len(char **arr)
 	if (arr)
 	{
 		while (arr[len] != NULL)
+		{
+		// printf("%s", arr[len]);
 			len++;
+		}
 	}
+	printf("%ld", len);
 	return (len);
 }

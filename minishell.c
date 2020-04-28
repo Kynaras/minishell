@@ -58,10 +58,29 @@ void	ft_minishell_mand(t_env_list **env, t_args_2d **input_2d, char **arg)
 	else if (ft_strcmpalpha((*input_2d)->node->argument, "echo") == 0)
 		ft_echo((*input_2d)->node, *env);
 	else if (ft_strcmpalpha("setenv", *arg) == 0)
+	{
+		if(!(*input_2d)->node->next || !(*input_2d)->node->next->next)
+		{
+			ft_putstr("Setenv badly formatted. Use 'setenv foo bar' format.\n");
+		}
+		else
+		{
 		ft_setenv(*env, (*input_2d)->node->next->argument,
 		(*input_2d)->node->next->next->argument, 1);
+		}	
+	}
 	else if (ft_strcmpalpha("unsetenv", *arg) == 0)
+	{
+		if((*input_2d)->node->next)
+		{
 		ft_unsetenv(env, (*input_2d)->node->next->argument);
+		}
+		else
+		{
+			ft_putstr("Please provide the environment variable you wish to unset\n");
+		}
+		
+	}
 	else if (ft_strcmpalpha("cd", (*input_2d)->node->argument) == 0)
 	{
 		if ((*input_2d)->node->next != NULL)
@@ -96,7 +115,7 @@ int		main(void)
 	t_env_list	*env;
 	t_args_2d	*tmp;
 
-	rl_attempted_completion_function = ft_g_namcomplete;
+	// rl_attempted_completion_function = ft_namecomplete;
 	input_2d = NULL;
 	env = ft_splitenv(environ);
 	ft_intro();
@@ -112,7 +131,7 @@ int		main(void)
 		{
 			tmp = input_2d;
 			ft_t_args_free(&(input_2d->node));
-			input_2d = input_2d->next;
+			input_2d = input_2d->next;			
 			free(tmp);
 		}
 	}

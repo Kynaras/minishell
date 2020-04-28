@@ -38,6 +38,8 @@ char	*ft_findpath(char *arg, t_env_list *env)
 {
 	t_v_list vars;
 
+	if(ft_getenv("PATH", env))
+	{
 	vars.path = ft_strsplit(ft_getenv("PATH", env), ':');
 	vars.exepath = NULL;
 	vars.i = 0;
@@ -58,8 +60,9 @@ char	*ft_findpath(char *arg, t_env_list *env)
 		}
 		vars.i++;
 	}
+		ft_freearray(vars.path);
+	}
 	ft_putstr("minishell: command not found :");
 	ft_putendl(arg);
-	ft_freearray(vars.path);
 	return (NULL);
 }
