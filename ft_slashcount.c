@@ -15,7 +15,6 @@
 int	ft_slashcount(char *path, int ignore)
 {
 	int i;
-
 	i = 0;
 	while (path[i])
 	{

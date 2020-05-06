@@ -32,7 +32,7 @@ void	ft_home(t_env_list *env, char **temp, char **destination)
 	ft_join(temp, ft_getenv("HOME", env));
 	ft_join(temp, "/");
 	ft_join(temp, *destination + 2);
-	destination = temp;
+	*destination = *temp;
 }
 
 void	ft_homer(t_env_list *env, char *temp)
@@ -71,7 +71,11 @@ void	ft_cd(char *destination, t_env_list *env)
 	}
 	if (destination[0] == '~' && destination[1] == '/'
 	&& destination[2] != '\0')
+	{
+
 		ft_home(env, &temp, &destination);
+		printf("Destination 2 = %s and temp 2 is = %s\n", destination, temp);
+	}
 	else if (destination[0] == '~' && destination[1] == '\0')
 		destination = ft_getenv("HOME", env);
 	if (chdir(destination) < 0)

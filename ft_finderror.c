@@ -55,6 +55,7 @@ int	ft_subcheck(char *path, char *path2, int count, struct stat *sb)
 	slashes = 1;
 	while (path2 && (count = ft_slashcount(path, slashes)))
 	{
+	
 		tmp = path2;
 		path2 = ft_strsub(path, 0, count + 1);
 		if (access(path2, X_OK) < 0)
@@ -65,7 +66,12 @@ int	ft_subcheck(char *path, char *path2, int count, struct stat *sb)
 		free(tmp);
 		slashes++;
 	}
-	if (count != -5 && path2[0] != '/')
+	if (!count)
+	{
+		return (ft_subsubcheck(path, path2, sb));
+	}
+
+	else if (count != -5 && path2[0] != '/')
 		return (ft_subsubcheck(path, path2, sb));
 	return (0);
 }
@@ -75,7 +81,7 @@ int	ft_finderror(char *path)
 	char		*path2;
 	struct stat	sb;
 	int			count;
-
+	
 	count = 0;
 	if (!path)
 		return (0);
