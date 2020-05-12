@@ -63,12 +63,12 @@ int		main(int argc, char *argv[])
 	char *buffer;
 
 	rl_attempted_completion_function = character_name_completion;
-	printf("Test autocompleter has started\n");
+	// printf("Test autocompleter has started\n");
 	while ((buffer = readline("> ")) != NULL)
 	{
 		if (buffer)
 		{
-			printf("You entered: %s\n", buffer);
+			// printf("You entered: %s\n", buffer);
 		}
 	}
 	return (0);

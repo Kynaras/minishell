@@ -66,7 +66,6 @@ LOOP:
 			g_childpid = 0;
 			while (1)
 			{
-				printf("%d\n", g_childpid);
 				ft_putendl("Hahaha");
 				sleep(1);
 			}

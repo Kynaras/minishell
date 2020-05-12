@@ -74,7 +74,6 @@ void	ft_cd(char *destination, t_env_list *env)
 	{
 
 		ft_home(env, &temp, &destination);
-		printf("Destination 2 = %s and temp 2 is = %s\n", destination, temp);
 	}
 	else if (destination[0] == '~' && destination[1] == '\0')
 		destination = ft_getenv("HOME", env);
